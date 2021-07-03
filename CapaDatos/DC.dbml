@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MotoMensajeria" Class="DCDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-RR1BBOV\SQLEXPRESS;Initial Catalog=MotoMensajeria;User ID=AlejoDB" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="MotoMensajeriaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Cliente" Member="eCliente">
+    <Type Name="eCliente">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="apellido" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="numCelular" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Cliente_Envio" Member="eEnvio" ThisKey="id" OtherKey="idCliente" Type="eEnvio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Envio" Member="eEnvio">
+    <Type Name="eEnvio">
+      <Column Name="idEnvio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="idCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="domicEntrega" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="localidadEntrega" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="unidades" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fragil" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="precioViaje" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="precioFinal" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Cliente_Envio" Member="eCliente" ThisKey="idCliente" OtherKey="id" Type="eCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
