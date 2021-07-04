@@ -6,13 +6,14 @@ using CapaDatos;
 
 namespace CapaNegocio
 {
-    public class Cliente
+    public class Motoquero
     {
         #region VM
         private int id;
         private string nombre;
         private string apellido;
-        private int numCelular; 
+        private int numCelular;
+        private string modeloMoto;
         #endregion
 
         #region PROPERTIES
@@ -20,20 +21,24 @@ namespace CapaNegocio
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
         public int NumCelular { get => numCelular; set => numCelular = value; }
+        public string ModeloMoto { get => modeloMoto; set => modeloMoto = value; }
         #endregion
 
         #region BUILDERS
-        public Cliente(int id, string nombre, string apellido, int numCelular) {
+        public Motoquero(int id, string nombre, string apellido, int numCelular, string modeloMoto)
+        {
             this.id = id;
             this.nombre = nombre;
             this.apellido = apellido;
             this.numCelular = numCelular;
+            this.ModeloMoto = modeloMoto;
         }
 
-        public Cliente() {
+        public Motoquero() {
             id = 0;
             nombre = apellido =  "";
             numCelular = 0;
+            ModeloMoto = "";
         }
         #endregion
 
@@ -45,13 +50,15 @@ namespace CapaNegocio
 
         public void Guardar() {
             DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
-            eCliente cliente = new eCliente();
-            cliente.nombre = this.nombre;
-            cliente.apellido = this.apellido;
-            cliente.numCelular = this.numCelular;
+            eMotoquero motoquero = new eMotoquero();
+            motoquero.nombre = this.nombre;
+            motoquero.apellido = this.apellido;
+            motoquero.numCelular = this.numCelular;
+            motoquero.modeloMoto = this.modeloMoto;
 
-            dc.eCliente.InsertOnSubmit(cliente);
+            dc.eMotoquero.InsertOnSubmit(motoquero);
             dc.SubmitChanges();
+
         }
         #endregion
     }
