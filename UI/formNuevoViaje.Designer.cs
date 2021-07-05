@@ -63,13 +63,17 @@ namespace UI
             // checkFragil
             // 
             this.checkFragil.AutoSize = true;
-            this.checkFragil.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.checkFragil.Location = new System.Drawing.Point(176, 573);
+            this.checkFragil.BackColor = System.Drawing.Color.Transparent;
+            this.checkFragil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.checkFragil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkFragil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.checkFragil.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.checkFragil.Location = new System.Drawing.Point(160, 575);
             this.checkFragil.Name = "checkFragil";
-            this.checkFragil.Size = new System.Drawing.Size(57, 18);
+            this.checkFragil.Size = new System.Drawing.Size(59, 21);
             this.checkFragil.TabIndex = 11;
             this.checkFragil.Text = "Fragil";
-            this.checkFragil.UseVisualStyleBackColor = true;
+            this.checkFragil.UseVisualStyleBackColor = false;
             // 
             // dtpFecha
             // 
@@ -98,7 +102,7 @@ namespace UI
             // 
             this.numUnidades.Location = new System.Drawing.Point(145, 399);
             this.numUnidades.Name = "numUnidades";
-            this.numUnidades.Size = new System.Drawing.Size(82, 20);
+            this.numUnidades.Size = new System.Drawing.Size(106, 20);
             this.numUnidades.TabIndex = 7;
             this.numUnidades.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numUnidades.Value = new decimal(new int[] {
@@ -109,89 +113,106 @@ namespace UI
             // 
             // numPrecioViaje
             // 
-            this.numPrecioViaje.Location = new System.Drawing.Point(145, 487);
+            this.numPrecioViaje.Location = new System.Drawing.Point(160, 487);
             this.numPrecioViaje.Name = "numPrecioViaje";
-            this.numPrecioViaje.Size = new System.Drawing.Size(82, 20);
+            this.numPrecioViaje.Size = new System.Drawing.Size(91, 20);
             this.numPrecioViaje.TabIndex = 9;
             this.numPrecioViaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // numPrecioFinal
             // 
-            this.numPrecioFinal.Location = new System.Drawing.Point(145, 529);
+            this.numPrecioFinal.Location = new System.Drawing.Point(160, 532);
             this.numPrecioFinal.Name = "numPrecioFinal";
-            this.numPrecioFinal.Size = new System.Drawing.Size(82, 20);
+            this.numPrecioFinal.Size = new System.Drawing.Size(91, 20);
             this.numPrecioFinal.TabIndex = 10;
             this.numPrecioFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblFecha.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblFecha.Location = new System.Drawing.Point(51, 278);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(37, 13);
+            this.lblFecha.Size = new System.Drawing.Size(47, 17);
             this.lblFecha.TabIndex = 9;
             this.lblFecha.Text = "Fecha";
             // 
             // lblDomicilio
             // 
             this.lblDomicilio.AutoSize = true;
+            this.lblDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblDomicilio.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblDomicilio.Location = new System.Drawing.Point(49, 319);
             this.lblDomicilio.Name = "lblDomicilio";
-            this.lblDomicilio.Size = new System.Drawing.Size(49, 13);
+            this.lblDomicilio.Size = new System.Drawing.Size(64, 17);
             this.lblDomicilio.TabIndex = 11;
             this.lblDomicilio.Text = "Domicilio";
             // 
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
+            this.lblLocalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblLocalidad.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblLocalidad.Location = new System.Drawing.Point(49, 360);
             this.lblLocalidad.Name = "lblLocalidad";
-            this.lblLocalidad.Size = new System.Drawing.Size(53, 13);
+            this.lblLocalidad.Size = new System.Drawing.Size(69, 17);
             this.lblLocalidad.TabIndex = 12;
             this.lblLocalidad.Text = "Localidad";
             // 
             // lblUnidades
             // 
             this.lblUnidades.AutoSize = true;
+            this.lblUnidades.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblUnidades.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblUnidades.Location = new System.Drawing.Point(49, 406);
             this.lblUnidades.Name = "lblUnidades";
-            this.lblUnidades.Size = new System.Drawing.Size(52, 13);
+            this.lblUnidades.Size = new System.Drawing.Size(68, 17);
             this.lblUnidades.TabIndex = 13;
             this.lblUnidades.Text = "Unidades";
             // 
             // lblPrecioViaje
             // 
             this.lblPrecioViaje.AutoSize = true;
-            this.lblPrecioViaje.Location = new System.Drawing.Point(51, 494);
+            this.lblPrecioViaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblPrecioViaje.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblPrecioViaje.Location = new System.Drawing.Point(51, 491);
             this.lblPrecioViaje.Name = "lblPrecioViaje";
-            this.lblPrecioViaje.Size = new System.Drawing.Size(80, 13);
+            this.lblPrecioViaje.Size = new System.Drawing.Size(106, 17);
             this.lblPrecioViaje.TabIndex = 14;
             this.lblPrecioViaje.Text = "Precio del Viaje";
             // 
             // lblPrecioFinal
             // 
             this.lblPrecioFinal.AutoSize = true;
+            this.lblPrecioFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblPrecioFinal.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblPrecioFinal.Location = new System.Drawing.Point(51, 536);
             this.lblPrecioFinal.Name = "lblPrecioFinal";
-            this.lblPrecioFinal.Size = new System.Drawing.Size(62, 13);
+            this.lblPrecioFinal.Size = new System.Drawing.Size(82, 17);
             this.lblPrecioFinal.TabIndex = 15;
             this.lblPrecioFinal.Text = "Precio Final";
             // 
             // btnOkEnvio
             // 
-            this.btnOkEnvio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOkEnvio.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnOkEnvio.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnOkEnvio.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnOkEnvio.FlatAppearance.BorderSize = 0;
+            this.btnOkEnvio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOkEnvio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
+            this.btnOkEnvio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnOkEnvio.Location = new System.Drawing.Point(176, 615);
             this.btnOkEnvio.Name = "btnOkEnvio";
-            this.btnOkEnvio.Size = new System.Drawing.Size(134, 40);
+            this.btnOkEnvio.Size = new System.Drawing.Size(134, 50);
             this.btnOkEnvio.TabIndex = 16;
             this.btnOkEnvio.Text = "Registrar Envio";
-            this.btnOkEnvio.UseVisualStyleBackColor = true;
+            this.btnOkEnvio.UseVisualStyleBackColor = false;
             // 
             // lblTituloViajes
             // 
             this.lblTituloViajes.AutoSize = true;
             this.lblTituloViajes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloViajes.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblTituloViajes.Location = new System.Drawing.Point(15, 18);
             this.lblTituloViajes.Name = "lblTituloViajes";
             this.lblTituloViajes.Size = new System.Drawing.Size(127, 20);
@@ -201,19 +222,22 @@ namespace UI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(18, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 15);
+            this.label1.Size = new System.Drawing.Size(130, 17);
             this.label1.TabIndex = 18;
             this.label1.Text = "Datos del cliente";
             // 
             // lblNomCliente
             // 
             this.lblNomCliente.AutoSize = true;
-            this.lblNomCliente.Location = new System.Drawing.Point(51, 110);
+            this.lblNomCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblNomCliente.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblNomCliente.Location = new System.Drawing.Point(49, 106);
             this.lblNomCliente.Name = "lblNomCliente";
-            this.lblNomCliente.Size = new System.Drawing.Size(44, 13);
+            this.lblNomCliente.Size = new System.Drawing.Size(58, 17);
             this.lblNomCliente.TabIndex = 20;
             this.lblNomCliente.Text = "Nombre";
             // 
@@ -227,9 +251,11 @@ namespace UI
             // lblApeClient
             // 
             this.lblApeClient.AutoSize = true;
+            this.lblApeClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblApeClient.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblApeClient.Location = new System.Drawing.Point(51, 151);
             this.lblApeClient.Name = "lblApeClient";
-            this.lblApeClient.Size = new System.Drawing.Size(44, 13);
+            this.lblApeClient.Size = new System.Drawing.Size(58, 17);
             this.lblApeClient.TabIndex = 22;
             this.lblApeClient.Text = "Apellido";
             // 
@@ -243,9 +269,11 @@ namespace UI
             // lblCelular
             // 
             this.lblCelular.AutoSize = true;
+            this.lblCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblCelular.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblCelular.Location = new System.Drawing.Point(51, 191);
             this.lblCelular.Name = "lblCelular";
-            this.lblCelular.Size = new System.Drawing.Size(39, 13);
+            this.lblCelular.Size = new System.Drawing.Size(52, 17);
             this.lblCelular.TabIndex = 24;
             this.lblCelular.Text = "Celular";
             // 
@@ -260,19 +288,23 @@ namespace UI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(18, 235);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 15);
+            this.label2.Size = new System.Drawing.Size(121, 17);
             this.label2.TabIndex = 25;
             this.label2.Text = "Datos del envio";
             // 
             // lblMotoquero
             // 
             this.lblMotoquero.AutoSize = true;
+            this.lblMotoquero.BackColor = System.Drawing.Color.Transparent;
+            this.lblMotoquero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblMotoquero.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblMotoquero.Location = new System.Drawing.Point(51, 448);
             this.lblMotoquero.Name = "lblMotoquero";
-            this.lblMotoquero.Size = new System.Drawing.Size(58, 13);
+            this.lblMotoquero.Size = new System.Drawing.Size(76, 17);
             this.lblMotoquero.TabIndex = 26;
             this.lblMotoquero.Text = "Motoquero";
             // 
@@ -288,6 +320,7 @@ namespace UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SlateGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(354, 691);
             this.Controls.Add(this.cmbMotoquero);
@@ -315,6 +348,7 @@ namespace UI
             this.Controls.Add(this.txtDomicilio);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.checkFragil);
+            this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.MaximumSize = new System.Drawing.Size(370, 730);
             this.MinimumSize = new System.Drawing.Size(370, 730);
             this.Name = "formNuevoViaje";

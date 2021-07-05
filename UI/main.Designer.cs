@@ -29,33 +29,11 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNuevoViaje = new System.Windows.Forms.Button();
-            this.btnNuevaMoto = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnNuevoViaje = new System.Windows.Forms.Button();
+            this.btnNuevaMoto = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnNuevoViaje
-            // 
-            this.btnNuevoViaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoViaje.Location = new System.Drawing.Point(22, 112);
-            this.btnNuevoViaje.Name = "btnNuevoViaje";
-            this.btnNuevoViaje.Size = new System.Drawing.Size(187, 55);
-            this.btnNuevoViaje.TabIndex = 0;
-            this.btnNuevoViaje.Text = "Nuevo viaje";
-            this.btnNuevoViaje.UseVisualStyleBackColor = true;
-            this.btnNuevoViaje.Click += new System.EventHandler(this.btnNuevoViaje_Click);
-            // 
-            // btnNuevaMoto
-            // 
-            this.btnNuevaMoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevaMoto.Location = new System.Drawing.Point(22, 196);
-            this.btnNuevaMoto.Name = "btnNuevaMoto";
-            this.btnNuevaMoto.Size = new System.Drawing.Size(187, 55);
-            this.btnNuevaMoto.TabIndex = 1;
-            this.btnNuevaMoto.Text = "Nuevo motoquero";
-            this.btnNuevaMoto.UseVisualStyleBackColor = true;
-            this.btnNuevaMoto.Click += new System.EventHandler(this.btnNuevaMoto_Click);
             // 
             // label1
             // 
@@ -77,30 +55,60 @@ namespace UI
             this.label2.TabIndex = 3;
             this.label2.Text = "ONTIME";
             // 
+            // btnNuevoViaje
+            // 
+            this.btnNuevoViaje.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnNuevoViaje.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnNuevoViaje.FlatAppearance.BorderSize = 0;
+            this.btnNuevoViaje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoViaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
+            this.btnNuevoViaje.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnNuevoViaje.Location = new System.Drawing.Point(22, 105);
+            this.btnNuevoViaje.Name = "btnNuevoViaje";
+            this.btnNuevoViaje.Size = new System.Drawing.Size(187, 60);
+            this.btnNuevoViaje.TabIndex = 36;
+            this.btnNuevoViaje.Text = "Nuevo Viaje";
+            this.btnNuevoViaje.UseVisualStyleBackColor = false;
+            // 
+            // btnNuevaMoto
+            // 
+            this.btnNuevaMoto.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnNuevaMoto.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnNuevaMoto.FlatAppearance.BorderSize = 0;
+            this.btnNuevaMoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaMoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
+            this.btnNuevaMoto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnNuevaMoto.Location = new System.Drawing.Point(22, 194);
+            this.btnNuevaMoto.Name = "btnNuevaMoto";
+            this.btnNuevaMoto.Size = new System.Drawing.Size(187, 60);
+            this.btnNuevaMoto.TabIndex = 37;
+            this.btnNuevaMoto.Text = "Nuevo Motoquero";
+            this.btnNuevaMoto.UseVisualStyleBackColor = false;
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(234, 281);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnNuevaMoto);
             this.Controls.Add(this.btnNuevoViaje);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.MaximumSize = new System.Drawing.Size(250, 320);
             this.MinimumSize = new System.Drawing.Size(250, 320);
             this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "main";
+            this.Text = "Menu";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnNuevoViaje;
-        private System.Windows.Forms.Button btnNuevaMoto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnNuevoViaje;
+        private System.Windows.Forms.Button btnNuevaMoto;
     }
 }
