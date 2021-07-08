@@ -8,12 +8,14 @@ namespace CapaNegocio
 {
     public class Motoquero
     {
+        public List<eMotoquero> listMotos;
         #region VM
         private int id;
         private string nombre;
         private string apellido;
         private int numCelular;
         private string modeloMoto;
+        //private static List<Motoquero> motos = new List<Motoquero>();
         #endregion
 
         #region PROPERTIES
@@ -22,6 +24,7 @@ namespace CapaNegocio
         public string Apellido { get => apellido; set => apellido = value; }
         public int NumCelular { get => numCelular; set => numCelular = value; }
         public string ModeloMoto { get => modeloMoto; set => modeloMoto = value; }
+        //public static List<Motoquero> Motos { get => motos; set => motos = value; }
         #endregion
 
         #region BUILDERS
@@ -59,6 +62,10 @@ namespace CapaNegocio
             dc.eMotoquero.InsertOnSubmit(motoquero);
             dc.SubmitChanges();
 
+        }
+        public void MostrarList() {
+            DCDataContext dcL = new DCDataContext();
+            listMotos = (from x in dcL.eMotoquero select x).ToList();
         }
         #endregion
     }

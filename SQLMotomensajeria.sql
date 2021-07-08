@@ -23,11 +23,14 @@ CREATE TABLE Envio(
 	unidades int NOT NULL,
 	fragil bit NOT NULL,
 
-	idMotoquero int NOT NULL,
+	--idMotoquero int NOT NULL,
 
 	precioViaje float NOT NULL,
 	precioFinal float NOT NULL
 )
 
-ALTER TABLE Envio ADD CONSTRAINT FK_Envio_idMotoquero FOREIGN KEY (idMotoquero)
-REFERENCES Motoquero (id);  
+drop table Motoquero
+drop table Envio
+
+-- ALTER TABLE Envio ADD CONSTRAINT FK_Envio_idMotoquero FOREIGN KEY (idMotoquero)
+-- REFERENCES Motoquero (id);  

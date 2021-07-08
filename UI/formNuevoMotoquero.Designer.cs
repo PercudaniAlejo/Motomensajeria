@@ -56,6 +56,11 @@ namespace UI
             // numCelMoto
             // 
             this.numCelMoto.Location = new System.Drawing.Point(139, 140);
+            this.numCelMoto.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
             this.numCelMoto.Name = "numCelMoto";
             this.numCelMoto.Size = new System.Drawing.Size(169, 20);
             this.numCelMoto.TabIndex = 27;
@@ -140,6 +145,7 @@ namespace UI
             this.btnAddMoto.TabIndex = 35;
             this.btnAddMoto.Text = "Agregar";
             this.btnAddMoto.UseVisualStyleBackColor = false;
+            this.btnAddMoto.Click += new System.EventHandler(this.btnAddMoto_Click);
             // 
             // formNuevoMotoquero
             // 

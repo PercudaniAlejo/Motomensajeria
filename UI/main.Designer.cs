@@ -69,6 +69,7 @@ namespace UI
             this.btnNuevoViaje.TabIndex = 36;
             this.btnNuevoViaje.Text = "Nuevo Viaje";
             this.btnNuevoViaje.UseVisualStyleBackColor = false;
+            this.btnNuevoViaje.Click += new System.EventHandler(this.btnNuevoViaje_Click_1);
             // 
             // btnNuevaMoto
             // 
@@ -84,6 +85,7 @@ namespace UI
             this.btnNuevaMoto.TabIndex = 37;
             this.btnNuevaMoto.Text = "Nuevo Motoquero";
             this.btnNuevaMoto.UseVisualStyleBackColor = false;
+            this.btnNuevaMoto.Click += new System.EventHandler(this.btnNuevaMoto_Click_1);
             // 
             // main
             // 

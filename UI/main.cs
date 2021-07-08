@@ -16,15 +16,15 @@ namespace UI
             InitializeComponent();
         }
 
-        private void btnNuevoViaje_Click(object sender, EventArgs e)
+        private void btnNuevaMoto_Click_1(object sender, EventArgs e)
         {
-            formNuevoViaje f = new formNuevoViaje();
+            formNuevoMotoquero f = new formNuevoMotoquero();
             f.ShowDialog();
         }
 
-        private void btnNuevaMoto_Click(object sender, EventArgs e)
+        private void btnNuevoViaje_Click_1(object sender, EventArgs e)
         {
-            formNuevoMotoquero f = new formNuevoMotoquero();
+            formNuevoViaje f = new formNuevoViaje();
             f.ShowDialog();
         }
     }

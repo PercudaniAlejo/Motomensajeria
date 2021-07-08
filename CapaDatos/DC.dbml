@@ -11,10 +11,8 @@
       <Column Name="localidadEntrega" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="unidades" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="fragil" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="idMotoquero" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="precioViaje" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="precioFinal" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Association Name="Motoquero_Envio" Member="eMotoquero" ThisKey="idMotoquero" OtherKey="id" Type="eMotoquero" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Motoquero" Member="eMotoquero">
@@ -24,7 +22,6 @@
       <Column Name="apellido" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="numCelular" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="modeloMoto" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Association Name="Motoquero_Envio" Member="eEnvio" ThisKey="id" OtherKey="idMotoquero" Type="eEnvio" />
     </Type>
   </Table>
 </Database>

@@ -20,7 +20,7 @@ namespace CapaNegocio
         private string localidadEntrega;
         private int unidades;
         private Boolean fragil;
-        private int idMotoquero;
+        //private int idMotoquero;
         private double precioViaje;
         private double precioFinal;
         #endregion
@@ -35,7 +35,7 @@ namespace CapaNegocio
         public string LocalidadEntrega { get => localidadEntrega; set => localidadEntrega = value; }
         public int Unidades { get => unidades; set => unidades = value; }
         public bool Fragil { get => fragil; set => fragil = value; }
-        public int IdMotoquero { get => idMotoquero; set => idMotoquero = value; }
+        //public int IdMotoquero { get => idMotoquero; set => idMotoquero = value; }
         public double PrecioViaje { get => precioViaje; set => precioViaje = value; }
         public double PrecioFinal { get => precioFinal; set => precioFinal = value; }
 
@@ -44,7 +44,7 @@ namespace CapaNegocio
         #region BUILDERS
         public Envio(int idEnvio, DateTime fecha, string nombreCliente,
             string apellidoCliente, int numCelCliente, string domicEntrega,
-            string localidadEntrega, int unidades, bool fragil, int idMotoquero,
+            string localidadEntrega, int unidades, bool fragil,
             double precioViaje, double precioFinal)
         {
             this.idEnvio = idEnvio;
@@ -56,7 +56,7 @@ namespace CapaNegocio
             this.localidadEntrega = localidadEntrega;
             this.unidades = unidades;
             this.fragil = fragil;
-            this.idMotoquero = idMotoquero;
+            //this.idMotoquero = idMotoquero;
             this.precioViaje = precioViaje;
             this.precioFinal = precioFinal;
         }
@@ -71,7 +71,7 @@ namespace CapaNegocio
             localidadEntrega = "";
             unidades = 1;
             fragil = false;
-            idMotoquero = 0;
+            //idMotoquero = 0;
             precioViaje = 0.0;
             precioFinal = 0.0;
         }
@@ -91,13 +91,15 @@ namespace CapaNegocio
             envio.localidadEntrega = this.LocalidadEntrega;
             envio.unidades = this.Unidades;
             envio.fragil = this.Fragil;
-            envio.idMotoquero = this.IdMotoquero;
+            //envio.idMotoquero = this.IdMotoquero;
             envio.precioViaje = this.PrecioViaje;
             envio.precioFinal = this.PrecioFinal;
 
             dc.eEnvio.InsertOnSubmit(envio);
             dc.SubmitChanges();
         }
+
+
 
         #endregion
     }

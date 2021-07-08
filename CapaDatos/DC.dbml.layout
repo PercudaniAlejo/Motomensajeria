@@ -1,25 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.625, 8.5" name="DC">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.875, 8.5" name="DC">
   <DataContextMoniker Name="/DCDataContext" />
   <nestedChildShapes>
-    <classShape Id="e0801b13-133e-46e9-b450-09f6993fc157" absoluteBounds="6.375, 1.625, 2, 3.1170068359375">
+    <classShape Id="5fc77d99-e8c7-4e21-9757-08c8ec8e4cbb" absoluteBounds="7.875, 0.5, 2, 2.9247054036458331">
       <DataClassMoniker Name="/DCDataContext/eEnvio" />
       <nestedChildShapes>
-        <elementListCompartment Id="8d7fb8c1-3231-4494-a5bf-dac389ef4eb7" absoluteBounds="6.39, 2.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c4e14f60-8dec-4be5-9588-7744a4eb14fd" absoluteBounds="7.89, 0.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5a3c11f0-e86b-4a34-9d2c-c82a206d7ef9" absoluteBounds="10.375, 1.5, 2, 1.7708968098958331">
+    <classShape Id="78a0284e-ea7c-4961-b31e-6fe2ddce9f20" absoluteBounds="12.625, 3.5, 2, 1.7708968098958331">
       <DataClassMoniker Name="/DCDataContext/eMotoquero" />
       <nestedChildShapes>
-        <elementListCompartment Id="681aa778-eb2f-49b8-93f1-009ef5b4ce1e" absoluteBounds="10.39, 1.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1678ee21-ff79-4e3e-8b42-64158a21247d" absoluteBounds="12.64, 3.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(10.375 : 2.44794840494792); (8.375 : 2.44794840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/DCDataContext/eMotoquero/Motoquero_Envio" />
-      <nodes>
-        <classShapeMoniker Id="5a3c11f0-e86b-4a34-9d2c-c82a206d7ef9" />
-        <classShapeMoniker Id="e0801b13-133e-46e9-b450-09f6993fc157" />
-      </nodes>
-    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

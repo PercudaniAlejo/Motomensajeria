@@ -67,7 +67,7 @@ namespace UI
             this.checkFragil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.checkFragil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkFragil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.checkFragil.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.checkFragil.ForeColor = System.Drawing.SystemColors.Desktop;
             this.checkFragil.Location = new System.Drawing.Point(160, 575);
             this.checkFragil.Name = "checkFragil";
             this.checkFragil.Size = new System.Drawing.Size(59, 21);
@@ -104,7 +104,6 @@ namespace UI
             this.numUnidades.Name = "numUnidades";
             this.numUnidades.Size = new System.Drawing.Size(106, 20);
             this.numUnidades.TabIndex = 7;
-            this.numUnidades.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numUnidades.Value = new decimal(new int[] {
             1,
             0,
@@ -114,18 +113,26 @@ namespace UI
             // numPrecioViaje
             // 
             this.numPrecioViaje.Location = new System.Drawing.Point(160, 487);
+            this.numPrecioViaje.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
             this.numPrecioViaje.Name = "numPrecioViaje";
             this.numPrecioViaje.Size = new System.Drawing.Size(91, 20);
             this.numPrecioViaje.TabIndex = 9;
-            this.numPrecioViaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // numPrecioFinal
             // 
             this.numPrecioFinal.Location = new System.Drawing.Point(160, 532);
+            this.numPrecioFinal.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.numPrecioFinal.Name = "numPrecioFinal";
             this.numPrecioFinal.Size = new System.Drawing.Size(91, 20);
             this.numPrecioFinal.TabIndex = 10;
-            this.numPrecioFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblFecha
             // 
@@ -207,6 +214,7 @@ namespace UI
             this.btnOkEnvio.TabIndex = 16;
             this.btnOkEnvio.Text = "Registrar Envio";
             this.btnOkEnvio.UseVisualStyleBackColor = false;
+            this.btnOkEnvio.Click += new System.EventHandler(this.btnOkEnvio_Click);
             // 
             // lblTituloViajes
             // 
@@ -280,10 +288,14 @@ namespace UI
             // numCelCliente
             // 
             this.numCelCliente.Location = new System.Drawing.Point(145, 184);
+            this.numCelCliente.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
             this.numCelCliente.Name = "numCelCliente";
             this.numCelCliente.Size = new System.Drawing.Size(169, 20);
             this.numCelCliente.TabIndex = 3;
-            this.numCelCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 

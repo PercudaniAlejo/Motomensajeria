@@ -109,13 +109,9 @@ namespace CapaDatos
 		
 		private bool _fragil;
 		
-		private int _idMotoquero;
-		
 		private double _precioViaje;
 		
 		private double _precioFinal;
-		
-		private EntityRef<eMotoquero> _eMotoquero;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -139,8 +135,6 @@ namespace CapaDatos
     partial void OnunidadesChanged();
     partial void OnfragilChanging(bool value);
     partial void OnfragilChanged();
-    partial void OnidMotoqueroChanging(int value);
-    partial void OnidMotoqueroChanged();
     partial void OnprecioViajeChanging(double value);
     partial void OnprecioViajeChanged();
     partial void OnprecioFinalChanging(double value);
@@ -149,7 +143,6 @@ namespace CapaDatos
 		
 		public eEnvio()
 		{
-			this._eMotoquero = default(EntityRef<eMotoquero>);
 			OnCreated();
 		}
 		
@@ -333,30 +326,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idMotoquero", DbType="Int NOT NULL")]
-		public int idMotoquero
-		{
-			get
-			{
-				return this._idMotoquero;
-			}
-			set
-			{
-				if ((this._idMotoquero != value))
-				{
-					if (this._eMotoquero.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidMotoqueroChanging(value);
-					this.SendPropertyChanging();
-					this._idMotoquero = value;
-					this.SendPropertyChanged("idMotoquero");
-					this.OnidMotoqueroChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precioViaje", DbType="Float NOT NULL")]
 		public double precioViaje
 		{
@@ -393,40 +362,6 @@ namespace CapaDatos
 					this._precioFinal = value;
 					this.SendPropertyChanged("precioFinal");
 					this.OnprecioFinalChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Motoquero_Envio", Storage="_eMotoquero", ThisKey="idMotoquero", OtherKey="id", IsForeignKey=true)]
-		public eMotoquero eMotoquero
-		{
-			get
-			{
-				return this._eMotoquero.Entity;
-			}
-			set
-			{
-				eMotoquero previousValue = this._eMotoquero.Entity;
-				if (((previousValue != value) 
-							|| (this._eMotoquero.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._eMotoquero.Entity = null;
-						previousValue.eEnvio.Remove(this);
-					}
-					this._eMotoquero.Entity = value;
-					if ((value != null))
-					{
-						value.eEnvio.Add(this);
-						this._idMotoquero = value.id;
-					}
-					else
-					{
-						this._idMotoquero = default(int);
-					}
-					this.SendPropertyChanged("eMotoquero");
 				}
 			}
 		}
@@ -468,8 +403,6 @@ namespace CapaDatos
 		
 		private string _modeloMoto;
 		
-		private EntitySet<eEnvio> _eEnvio;
-		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -488,7 +421,6 @@ namespace CapaDatos
 		
 		public eMotoquero()
 		{
-			this._eEnvio = new EntitySet<eEnvio>(new Action<eEnvio>(this.attach_eEnvio), new Action<eEnvio>(this.detach_eEnvio));
 			OnCreated();
 		}
 		
@@ -592,19 +524,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Motoquero_Envio", Storage="_eEnvio", ThisKey="id", OtherKey="idMotoquero")]
-		public EntitySet<eEnvio> eEnvio
-		{
-			get
-			{
-				return this._eEnvio;
-			}
-			set
-			{
-				this._eEnvio.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -623,18 +542,6 @@ namespace CapaDatos
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_eEnvio(eEnvio entity)
-		{
-			this.SendPropertyChanging();
-			entity.eMotoquero = this;
-		}
-		
-		private void detach_eEnvio(eEnvio entity)
-		{
-			this.SendPropertyChanging();
-			entity.eMotoquero = null;
 		}
 	}
 }
