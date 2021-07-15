@@ -202,10 +202,10 @@ namespace UI
             // 
             // btnOkEnvio
             // 
-            this.btnOkEnvio.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnOkEnvio.BackColor = System.Drawing.Color.Silver;
             this.btnOkEnvio.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnOkEnvio.FlatAppearance.BorderSize = 0;
-            this.btnOkEnvio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOkEnvio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOkEnvio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
             this.btnOkEnvio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnOkEnvio.Location = new System.Drawing.Point(176, 615);
@@ -332,9 +332,9 @@ namespace UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SlateGray;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(354, 691);
+            this.ClientSize = new System.Drawing.Size(354, 692);
             this.Controls.Add(this.cmbMotoquero);
             this.Controls.Add(this.lblMotoquero);
             this.Controls.Add(this.label2);

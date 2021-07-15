@@ -39,7 +39,7 @@ namespace UI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(18, 56);
+            this.label1.Location = new System.Drawing.Point(18, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 22);
             this.label1.TabIndex = 2;
@@ -57,10 +57,10 @@ namespace UI
             // 
             // btnNuevoViaje
             // 
-            this.btnNuevoViaje.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnNuevoViaje.BackColor = System.Drawing.Color.Silver;
             this.btnNuevoViaje.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnNuevoViaje.FlatAppearance.BorderSize = 0;
-            this.btnNuevoViaje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoViaje.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNuevoViaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
             this.btnNuevoViaje.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnNuevoViaje.Location = new System.Drawing.Point(22, 105);
@@ -73,10 +73,10 @@ namespace UI
             // 
             // btnNuevaMoto
             // 
-            this.btnNuevaMoto.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnNuevaMoto.BackColor = System.Drawing.Color.Silver;
             this.btnNuevaMoto.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnNuevaMoto.FlatAppearance.BorderSize = 0;
-            this.btnNuevaMoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaMoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNuevaMoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
             this.btnNuevaMoto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnNuevaMoto.Location = new System.Drawing.Point(22, 194);
@@ -91,8 +91,8 @@ namespace UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SlateGray;
-            this.ClientSize = new System.Drawing.Size(234, 281);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(234, 282);
             this.Controls.Add(this.btnNuevaMoto);
             this.Controls.Add(this.btnNuevoViaje);
             this.Controls.Add(this.label2);
