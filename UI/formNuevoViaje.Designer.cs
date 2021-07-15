@@ -361,7 +361,6 @@ namespace UI
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.checkFragil);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.MaximumSize = new System.Drawing.Size(370, 730);
             this.MinimumSize = new System.Drawing.Size(370, 730);
             this.Name = "formNuevoViaje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
