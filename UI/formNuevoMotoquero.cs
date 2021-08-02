@@ -24,13 +24,11 @@ namespace UI
             Clear();
             Search();
         }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             obj = new Motoquero();
             pnlAddMoto.Enabled = true;
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Clear();

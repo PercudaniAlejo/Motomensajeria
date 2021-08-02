@@ -12,26 +12,46 @@ namespace UI
 {
     public partial class formNuevoViaje : Form
     {
-        Motoquero obj = new Motoquero();
-        public formNuevoViaje()
+        Envio obj;
+        public formNuevoViaje(Envio objEnvio = null)
         {
             InitializeComponent();
+            obj = objEnvio;
         }
-        private void btnOkEnvio_Click(object sender, EventArgs e)
+        private void formNuevoViaje_Load(object sender, EventArgs e)
         {
-            Save();
+            if (obj != null)
+                CargarDatosModificar(obj);
+            else
+                obj = new Envio();
         }
-      
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            SetDatos();
+            obj.Guardar();
+            MessageBox.Show("Viaje registrado correctamente correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+            Clear();
+        }
 
-        #region METHODS
-        private void Save()
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Envio e = new Envio(0, dtpFecha.Value, txtNomCliente.Text, txtApeCliente.Text,
-                                (int)numCelCliente.Value, txtDomicilio.Text, txtLocalidad.Text,
-                                (int)numUnidades.Value, checkFragil.Checked,
-                                (double)numPrecioViaje.Value, (double)numPrecioFinal.Value);
-            e.Guardar();
-            MessageBox.Show("Guardado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Clear();
+            this.Close();
+        }
+     
+        #region METHODS
+        private void SetDatos()
+        {
+            obj.ApellidoCliente = txtApeCliente.Text;
+            obj.NombreCliente = txtNomCliente.Text;
+            obj.NumCelCliente = (int)numCelCliente.Value;
+            obj.Fecha = dtpFecha.Value;
+            obj.DomicEntrega = txtDomicilio.Text;
+            obj.LocalidadEntrega = txtLocalidad.Text;
+            obj.Unidades = (int)numUnidades.Value;
+            obj.PrecioViaje = (int)numPrecioViaje.Value;
+            obj.PrecioFinal = (int)numPrecioFinal.Value;
         }
 
         private void Clear()
@@ -46,6 +66,20 @@ namespace UI
             checkFragil.Checked = false;
             numPrecioViaje.Value = 0;
             numPrecioFinal.Value = 0;
+        }
+
+        private void CargarDatosModificar(Envio obj)
+        {
+            txtApeCliente.Text = obj.ApellidoCliente;
+            txtNomCliente.Text = obj.NombreCliente;
+            txtDomicilio.Text = obj.DomicEntrega;
+            txtLocalidad.Text = obj.LocalidadEntrega;
+            dtpFecha.Value = obj.Fecha;
+            numCelCliente.Value = (int)obj.NumCelCliente;
+            numUnidades.Value = (int)obj.Unidades;
+            checkFragil.Checked = obj.Fragil;
+            numPrecioViaje.Value = (int)obj.PrecioViaje;
+            numPrecioFinal.Value = (int)obj.PrecioFinal;
         }
 
         #endregion

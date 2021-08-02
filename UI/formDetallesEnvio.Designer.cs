@@ -79,7 +79,7 @@ namespace UI
             this.cmbMotoquero.FormattingEnabled = true;
             this.cmbMotoquero.Location = new System.Drawing.Point(113, 177);
             this.cmbMotoquero.Name = "cmbMotoquero";
-            this.cmbMotoquero.Size = new System.Drawing.Size(165, 21);
+            this.cmbMotoquero.Size = new System.Drawing.Size(169, 21);
             this.cmbMotoquero.TabIndex = 36;
             // 
             // lblMotoquero
@@ -253,12 +253,13 @@ namespace UI
             this.btnOkEnvio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOkEnvio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
             this.btnOkEnvio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnOkEnvio.Location = new System.Drawing.Point(207, 599);
+            this.btnOkEnvio.Location = new System.Drawing.Point(226, 601);
             this.btnOkEnvio.Name = "btnOkEnvio";
             this.btnOkEnvio.Size = new System.Drawing.Size(97, 36);
             this.btnOkEnvio.TabIndex = 48;
-            this.btnOkEnvio.Text = "Cerrar";
+            this.btnOkEnvio.Text = "Aceptar";
             this.btnOkEnvio.UseVisualStyleBackColor = false;
+            this.btnOkEnvio.Click += new System.EventHandler(this.btnOkEnvio_Click);
             // 
             // txtNomCliente
             // 
@@ -327,6 +328,7 @@ namespace UI
             this.pnlMostrarDatosCliente.Controls.Add(this.txtApeCliente);
             this.pnlMostrarDatosCliente.Controls.Add(this.lblNomCliente);
             this.pnlMostrarDatosCliente.Controls.Add(this.txtNomCliente);
+            this.pnlMostrarDatosCliente.Enabled = false;
             this.pnlMostrarDatosCliente.Location = new System.Drawing.Point(31, 58);
             this.pnlMostrarDatosCliente.Name = "pnlMostrarDatosCliente";
             this.pnlMostrarDatosCliente.Size = new System.Drawing.Size(292, 122);
@@ -349,6 +351,7 @@ namespace UI
             this.pnlMostrarDatosEnvio.Controls.Add(this.txtDomicilio);
             this.pnlMostrarDatosEnvio.Controls.Add(this.dtpFecha);
             this.pnlMostrarDatosEnvio.Controls.Add(this.checkFragil);
+            this.pnlMostrarDatosEnvio.Enabled = false;
             this.pnlMostrarDatosEnvio.Location = new System.Drawing.Point(31, 239);
             this.pnlMostrarDatosEnvio.Name = "pnlMostrarDatosEnvio";
             this.pnlMostrarDatosEnvio.Size = new System.Drawing.Size(292, 345);
@@ -359,7 +362,7 @@ namespace UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(354, 692);
+            this.ClientSize = new System.Drawing.Size(354, 691);
             this.Controls.Add(this.pnlMostrarDatosEnvio);
             this.Controls.Add(this.pnlMostrarDatosCliente);
             this.Controls.Add(this.btnOkEnvio);
@@ -369,6 +372,7 @@ namespace UI
             this.MinimumSize = new System.Drawing.Size(370, 730);
             this.Name = "formDetallesEnvio";
             this.Text = "formDetallesEnvio";
+            this.Load += new System.EventHandler(this.formDetallesEnvio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioFinal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioViaje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUnidades)).EndInit();

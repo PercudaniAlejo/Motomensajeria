@@ -24,7 +24,7 @@ namespace UI
 
         private void btnNuevoViaje_Click_1(object sender, EventArgs e)
         {
-            formNuevoViaje f = new formNuevoViaje();
+            formViajes f = new formViajes();
             f.ShowDialog();
         }
     }

@@ -29,45 +29,34 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtFiltrar = new System.Windows.Forms.TextBox();
-            this.lblBuscar = new System.Windows.Forms.Label();
+            this.dgvEnvios = new System.Windows.Forms.DataGridView();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnDetalles = new System.Windows.Forms.Button();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnvios)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvEnvios
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvEnvios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 89);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(570, 258);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvEnvios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEnvios.Location = new System.Drawing.Point(12, 89);
+            this.dgvEnvios.Name = "dgvEnvios";
+            this.dgvEnvios.Size = new System.Drawing.Size(570, 258);
+            this.dgvEnvios.TabIndex = 0;
             // 
-            // txtFiltrar
+            // txtBuscar
             // 
-            this.txtFiltrar.Location = new System.Drawing.Point(60, 52);
-            this.txtFiltrar.Name = "txtFiltrar";
-            this.txtFiltrar.Size = new System.Drawing.Size(206, 20);
-            this.txtFiltrar.TabIndex = 1;
-            // 
-            // lblBuscar
-            // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblBuscar.Location = new System.Drawing.Point(10, 55);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(40, 13);
-            this.lblBuscar.TabIndex = 2;
-            this.lblBuscar.Text = "Buscar";
+            this.txtBuscar.Location = new System.Drawing.Point(12, 53);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(206, 20);
+            this.txtBuscar.TabIndex = 1;
             // 
             // btnDetalles
             // 
@@ -84,6 +73,7 @@ namespace UI
             this.btnDetalles.TabIndex = 17;
             this.btnDetalles.Text = "Más detalles";
             this.btnDetalles.UseVisualStyleBackColor = false;
+            this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
             // 
             // btnFiltrar
             // 
@@ -93,12 +83,13 @@ namespace UI
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.btnFiltrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnFiltrar.Location = new System.Drawing.Point(286, 52);
+            this.btnFiltrar.Location = new System.Drawing.Point(236, 53);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(101, 20);
             this.btnFiltrar.TabIndex = 18;
             this.btnFiltrar.Text = "Buscar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // btnEliminar
             // 
@@ -115,6 +106,7 @@ namespace UI
             this.btnEliminar.TabIndex = 43;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -131,6 +123,7 @@ namespace UI
             this.btnModificar.TabIndex = 42;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnNuevo
             // 
@@ -147,6 +140,7 @@ namespace UI
             this.btnNuevo.TabIndex = 41;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // label1
             // 
@@ -171,13 +165,13 @@ namespace UI
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.btnDetalles);
-            this.Controls.Add(this.lblBuscar);
-            this.Controls.Add(this.txtFiltrar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.dgvEnvios);
             this.MinimumSize = new System.Drawing.Size(610, 465);
             this.Name = "formViajes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formViajes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnvios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,9 +179,8 @@ namespace UI
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox txtFiltrar;
-        private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.DataGridView dgvEnvios;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnDetalles;
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Button btnEliminar;

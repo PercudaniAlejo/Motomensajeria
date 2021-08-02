@@ -42,7 +42,7 @@ namespace UI
             this.lblUnidades = new System.Windows.Forms.Label();
             this.lblPrecioViaje = new System.Windows.Forms.Label();
             this.lblPrecioFinal = new System.Windows.Forms.Label();
-            this.btnOkEnvio = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.lblTituloViajes = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNomCliente = new System.Windows.Forms.Label();
@@ -54,6 +54,7 @@ namespace UI
             this.label2 = new System.Windows.Forms.Label();
             this.lblMotoquero = new System.Windows.Forms.Label();
             this.cmbMotoquero = new System.Windows.Forms.ComboBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numUnidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioViaje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioFinal)).BeginInit();
@@ -200,21 +201,21 @@ namespace UI
             this.lblPrecioFinal.TabIndex = 15;
             this.lblPrecioFinal.Text = "Precio Final";
             // 
-            // btnOkEnvio
+            // btnAceptar
             // 
-            this.btnOkEnvio.BackColor = System.Drawing.Color.Silver;
-            this.btnOkEnvio.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnOkEnvio.FlatAppearance.BorderSize = 0;
-            this.btnOkEnvio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnOkEnvio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
-            this.btnOkEnvio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnOkEnvio.Location = new System.Drawing.Point(176, 615);
-            this.btnOkEnvio.Name = "btnOkEnvio";
-            this.btnOkEnvio.Size = new System.Drawing.Size(134, 50);
-            this.btnOkEnvio.TabIndex = 16;
-            this.btnOkEnvio.Text = "Registrar Envio";
-            this.btnOkEnvio.UseVisualStyleBackColor = false;
-            this.btnOkEnvio.Click += new System.EventHandler(this.btnOkEnvio_Click);
+            this.btnAceptar.BackColor = System.Drawing.Color.Silver;
+            this.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
+            this.btnAceptar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAceptar.Location = new System.Drawing.Point(196, 615);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(118, 33);
+            this.btnAceptar.TabIndex = 16;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // lblTituloViajes
             // 
@@ -325,8 +326,24 @@ namespace UI
             this.cmbMotoquero.FormattingEnabled = true;
             this.cmbMotoquero.Location = new System.Drawing.Point(145, 440);
             this.cmbMotoquero.Name = "cmbMotoquero";
-            this.cmbMotoquero.Size = new System.Drawing.Size(165, 21);
+            this.cmbMotoquero.Size = new System.Drawing.Size(169, 21);
             this.cmbMotoquero.TabIndex = 8;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Silver;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancelar.Location = new System.Drawing.Point(54, 615);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(118, 33);
+            this.btnCancelar.TabIndex = 27;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // formNuevoViaje
             // 
@@ -335,6 +352,7 @@ namespace UI
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(354, 692);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.cmbMotoquero);
             this.Controls.Add(this.lblMotoquero);
             this.Controls.Add(this.label2);
@@ -346,7 +364,7 @@ namespace UI
             this.Controls.Add(this.txtNomCliente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTituloViajes);
-            this.Controls.Add(this.btnOkEnvio);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblPrecioFinal);
             this.Controls.Add(this.lblPrecioViaje);
             this.Controls.Add(this.lblUnidades);
@@ -365,6 +383,7 @@ namespace UI
             this.Name = "formNuevoViaje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo vieje";
+            this.Load += new System.EventHandler(this.formNuevoViaje_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numUnidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioViaje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioFinal)).EndInit();
@@ -389,7 +408,7 @@ namespace UI
         private System.Windows.Forms.Label lblUnidades;
         private System.Windows.Forms.Label lblPrecioViaje;
         private System.Windows.Forms.Label lblPrecioFinal;
-        private System.Windows.Forms.Button btnOkEnvio;
+        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label lblTituloViajes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNomCliente;
@@ -401,6 +420,7 @@ namespace UI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblMotoquero;
         private System.Windows.Forms.ComboBox cmbMotoquero;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
 

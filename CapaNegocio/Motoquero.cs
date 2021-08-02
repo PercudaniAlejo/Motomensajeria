@@ -64,7 +64,6 @@ namespace CapaNegocio
                 CargaFilaMotoquero(motoquero);
             }
             dc.SubmitChanges();
-
         }
 
         private void CargaFilaMotoquero(eMotoquero motoquero) {

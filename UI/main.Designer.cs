@@ -48,7 +48,7 @@ namespace UI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(65, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 25);
@@ -67,7 +67,7 @@ namespace UI
             this.btnNuevoViaje.Name = "btnNuevoViaje";
             this.btnNuevoViaje.Size = new System.Drawing.Size(187, 60);
             this.btnNuevoViaje.TabIndex = 36;
-            this.btnNuevoViaje.Text = "Nuevo Viaje";
+            this.btnNuevoViaje.Text = "VIAJES";
             this.btnNuevoViaje.UseVisualStyleBackColor = false;
             this.btnNuevoViaje.Click += new System.EventHandler(this.btnNuevoViaje_Click_1);
             // 
@@ -83,7 +83,7 @@ namespace UI
             this.btnNuevaMoto.Name = "btnNuevaMoto";
             this.btnNuevaMoto.Size = new System.Drawing.Size(187, 60);
             this.btnNuevaMoto.TabIndex = 37;
-            this.btnNuevaMoto.Text = "Nuevo Motoquero";
+            this.btnNuevaMoto.Text = "MOTOQUEROS";
             this.btnNuevaMoto.UseVisualStyleBackColor = false;
             this.btnNuevaMoto.Click += new System.EventHandler(this.btnNuevaMoto_Click_1);
             // 
@@ -92,7 +92,7 @@ namespace UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(234, 282);
+            this.ClientSize = new System.Drawing.Size(234, 281);
             this.Controls.Add(this.btnNuevaMoto);
             this.Controls.Add(this.btnNuevoViaje);
             this.Controls.Add(this.label2);

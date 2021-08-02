@@ -82,6 +82,20 @@ namespace CapaNegocio
         {
             DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
             eEnvio envio = new eEnvio();
+
+            if (this.idEnvio == 0)
+            {
+                CargaFilaEnvio(envio);
+                dc.eEnvio.InsertOnSubmit(envio);
+            }
+            else {
+                envio = (from x in dc.eEnvio where x.idEnvio == this.idEnvio select x).FirstOrDefault();
+                CargaFilaEnvio(envio);
+            }
+            dc.SubmitChanges();
+        }
+
+        public void CargaFilaEnvio(eEnvio envio) {
             envio.idEnvio = this.IdEnvio;
             envio.fecha = this.Fecha;
             envio.nombreCliente = this.NombreCliente;
@@ -94,12 +108,49 @@ namespace CapaNegocio
             //envio.idMotoquero = this.IdMotoquero;
             envio.precioViaje = this.PrecioViaje;
             envio.precioFinal = this.PrecioFinal;
-
-            dc.eEnvio.InsertOnSubmit(envio);
-            dc.SubmitChanges();
         }
 
+        public static List<Envio> Buscar(string buscado)
+        {
+            List<Envio> resultados = new List<Envio>();
+            buscado = buscado.ToLower();
 
+            DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
+            var filas = from x in dc.eEnvio
+                        where x.nombreCliente.ToLower().Contains(buscado) ||
+                              x.apellidoCliente.ToLower().Contains(buscado) ||
+                              x.domicEntrega.ToLower().Contains(buscado) ||
+                              x.localidadEntrega.ToLower().Contains(buscado)
+                        select x;
+
+            if (filas != null)
+            {
+                foreach (var f in filas)
+                {
+                    resultados.Add(new Envio(f.idEnvio, f.fecha, f.nombreCliente, f.apellidoCliente,
+                                            f.numCelCliente, f.domicEntrega, f.localidadEntrega,
+                                            f.unidades, f.fragil, f.precioViaje, f.precioFinal));
+                }
+            }
+
+            return resultados;
+
+        }
+
+        public void Eliminar()
+        {
+            DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
+            var enc = (from x in dc.eEnvio where x.idEnvio == this.idEnvio select x).FirstOrDefault();
+            if (enc != null)
+            {
+                dc.eEnvio.DeleteOnSubmit(enc);
+                dc.SubmitChanges();
+            }
+            else
+            {
+                throw new Exception("No se pudo eliminar el dato, no fue encontrado el id: " + this.idEnvio);
+            }
+        }
 
         #endregion
     }
