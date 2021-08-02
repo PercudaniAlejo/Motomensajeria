@@ -8,7 +8,6 @@ namespace CapaNegocio
 {
     public class Motoquero
     {
-        public List<eMotoquero> listMotos;
         #region VM
         private int id;
         private string nombre;
@@ -68,7 +67,7 @@ namespace CapaNegocio
 
         }
 
-        public void CargaFilaMotoquero(eMotoquero motoquero) {
+        private void CargaFilaMotoquero(eMotoquero motoquero) {
             motoquero.nombre = this.nombre;
             motoquero.apellido = this.apellido;
             motoquero.numCelular = this.numCelular;
@@ -102,10 +101,10 @@ namespace CapaNegocio
         public void Eliminar()
         {
             DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
-            var enc = (from x in dc.ePersona where x.id == this.id select x).FirstOrDefault();
+            var enc = (from x in dc.eMotoquero where x.id == this.id select x).FirstOrDefault();
             if (enc != null)
             {
-                dc.ePersona.DeleteOnSubmit(enc);
+                dc.eMotoquero.DeleteOnSubmit(enc);
                 dc.SubmitChanges();
             }
             else

@@ -38,7 +38,7 @@ namespace UI
             this.lblModeloMoto = new System.Windows.Forms.Label();
             this.txtModeloMoto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAddMoto = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.dgvMotoqueros = new System.Windows.Forms.DataGridView();
             this.pnlAddMoto = new System.Windows.Forms.Panel();
@@ -47,6 +47,7 @@ namespace UI
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnViajes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numCelMoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMotoqueros)).BeginInit();
             this.pnlAddMoto.SuspendLayout();
@@ -58,7 +59,7 @@ namespace UI
             this.lblCelularMoto.AutoSize = true;
             this.lblCelularMoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.lblCelularMoto.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblCelularMoto.Location = new System.Drawing.Point(14, 62);
+            this.lblCelularMoto.Location = new System.Drawing.Point(14, 71);
             this.lblCelularMoto.Name = "lblCelularMoto";
             this.lblCelularMoto.Size = new System.Drawing.Size(52, 17);
             this.lblCelularMoto.TabIndex = 31;
@@ -67,7 +68,7 @@ namespace UI
             // numCelMoto
             // 
             this.numCelMoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.numCelMoto.Location = new System.Drawing.Point(17, 82);
+            this.numCelMoto.Location = new System.Drawing.Point(17, 91);
             this.numCelMoto.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -84,7 +85,7 @@ namespace UI
             this.lblApeMoto.AutoSize = true;
             this.lblApeMoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.lblApeMoto.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblApeMoto.Location = new System.Drawing.Point(253, 10);
+            this.lblApeMoto.Location = new System.Drawing.Point(253, 19);
             this.lblApeMoto.Name = "lblApeMoto";
             this.lblApeMoto.Size = new System.Drawing.Size(58, 17);
             this.lblApeMoto.TabIndex = 30;
@@ -93,7 +94,7 @@ namespace UI
             // txtApeMoto
             // 
             this.txtApeMoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtApeMoto.Location = new System.Drawing.Point(256, 30);
+            this.txtApeMoto.Location = new System.Drawing.Point(256, 39);
             this.txtApeMoto.Name = "txtApeMoto";
             this.txtApeMoto.Size = new System.Drawing.Size(169, 20);
             this.txtApeMoto.TabIndex = 26;
@@ -104,7 +105,7 @@ namespace UI
             this.lblNomMoto.AutoSize = true;
             this.lblNomMoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.lblNomMoto.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblNomMoto.Location = new System.Drawing.Point(14, 10);
+            this.lblNomMoto.Location = new System.Drawing.Point(14, 19);
             this.lblNomMoto.Name = "lblNomMoto";
             this.lblNomMoto.Size = new System.Drawing.Size(58, 17);
             this.lblNomMoto.TabIndex = 29;
@@ -113,7 +114,7 @@ namespace UI
             // txtNomMoto
             // 
             this.txtNomMoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtNomMoto.Location = new System.Drawing.Point(17, 30);
+            this.txtNomMoto.Location = new System.Drawing.Point(17, 39);
             this.txtNomMoto.Name = "txtNomMoto";
             this.txtNomMoto.Size = new System.Drawing.Size(169, 20);
             this.txtNomMoto.TabIndex = 25;
@@ -124,7 +125,7 @@ namespace UI
             this.lblModeloMoto.AutoSize = true;
             this.lblModeloMoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.lblModeloMoto.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblModeloMoto.Location = new System.Drawing.Point(253, 62);
+            this.lblModeloMoto.Location = new System.Drawing.Point(253, 71);
             this.lblModeloMoto.Name = "lblModeloMoto";
             this.lblModeloMoto.Size = new System.Drawing.Size(109, 17);
             this.lblModeloMoto.TabIndex = 32;
@@ -133,7 +134,7 @@ namespace UI
             // txtModeloMoto
             // 
             this.txtModeloMoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtModeloMoto.Location = new System.Drawing.Point(256, 81);
+            this.txtModeloMoto.Location = new System.Drawing.Point(256, 90);
             this.txtModeloMoto.Name = "txtModeloMoto";
             this.txtModeloMoto.Size = new System.Drawing.Size(169, 20);
             this.txtModeloMoto.TabIndex = 33;
@@ -149,22 +150,22 @@ namespace UI
             this.label1.TabIndex = 28;
             this.label1.Text = "Nuevo motoquero";
             // 
-            // btnAddMoto
+            // btnAceptar
             // 
-            this.btnAddMoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAddMoto.BackColor = System.Drawing.Color.Silver;
-            this.btnAddMoto.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnAddMoto.FlatAppearance.BorderSize = 0;
-            this.btnAddMoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddMoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
-            this.btnAddMoto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAddMoto.Location = new System.Drawing.Point(479, 17);
-            this.btnAddMoto.Name = "btnAddMoto";
-            this.btnAddMoto.Size = new System.Drawing.Size(80, 33);
-            this.btnAddMoto.TabIndex = 35;
-            this.btnAddMoto.Text = "Aceptar";
-            this.btnAddMoto.UseVisualStyleBackColor = false;
-            this.btnAddMoto.Click += new System.EventHandler(this.btnAddMoto_Click);
+            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAceptar.BackColor = System.Drawing.Color.Silver;
+            this.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
+            this.btnAceptar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAceptar.Location = new System.Drawing.Point(479, 26);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(80, 33);
+            this.btnAceptar.TabIndex = 35;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -175,7 +176,7 @@ namespace UI
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelar.Location = new System.Drawing.Point(479, 69);
+            this.btnCancelar.Location = new System.Drawing.Point(479, 78);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 33);
             this.btnCancelar.TabIndex = 36;
@@ -199,7 +200,7 @@ namespace UI
             this.pnlAddMoto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlAddMoto.Controls.Add(this.btnCancelar);
-            this.pnlAddMoto.Controls.Add(this.btnAddMoto);
+            this.pnlAddMoto.Controls.Add(this.btnAceptar);
             this.pnlAddMoto.Controls.Add(this.txtModeloMoto);
             this.pnlAddMoto.Controls.Add(this.lblModeloMoto);
             this.pnlAddMoto.Controls.Add(this.lblCelularMoto);
@@ -209,9 +210,9 @@ namespace UI
             this.pnlAddMoto.Controls.Add(this.lblNomMoto);
             this.pnlAddMoto.Controls.Add(this.txtNomMoto);
             this.pnlAddMoto.Enabled = false;
-            this.pnlAddMoto.Location = new System.Drawing.Point(0, 337);
+            this.pnlAddMoto.Location = new System.Drawing.Point(0, 328);
             this.pnlAddMoto.Name = "pnlAddMoto";
-            this.pnlAddMoto.Size = new System.Drawing.Size(571, 121);
+            this.pnlAddMoto.Size = new System.Drawing.Size(571, 130);
             this.pnlAddMoto.TabIndex = 38;
             // 
             // btnNuevo
@@ -246,6 +247,7 @@ namespace UI
             this.btnModificar.TabIndex = 39;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -262,6 +264,7 @@ namespace UI
             this.btnEliminar.TabIndex = 40;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // txtBuscar
             // 
@@ -288,12 +291,29 @@ namespace UI
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // btnViajes
+            // 
+            this.btnViajes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnViajes.BackColor = System.Drawing.Color.Silver;
+            this.btnViajes.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnViajes.FlatAppearance.BorderSize = 0;
+            this.btnViajes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnViajes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
+            this.btnViajes.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnViajes.Location = new System.Drawing.Point(451, 289);
+            this.btnViajes.Name = "btnViajes";
+            this.btnViajes.Size = new System.Drawing.Size(108, 33);
+            this.btnViajes.TabIndex = 42;
+            this.btnViajes.Text = "Ver viajes";
+            this.btnViajes.UseVisualStyleBackColor = false;
+            // 
             // formNuevoMotoquero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(571, 458);
+            this.Controls.Add(this.btnViajes);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnEliminar);
@@ -306,6 +326,7 @@ namespace UI
             this.Name = "formNuevoMotoquero";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo motoquero";
+            this.Load += new System.EventHandler(this.formNuevoMotoquero_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numCelMoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMotoqueros)).EndInit();
             this.pnlAddMoto.ResumeLayout(false);
@@ -326,7 +347,7 @@ namespace UI
         private System.Windows.Forms.Label lblModeloMoto;
         private System.Windows.Forms.TextBox txtModeloMoto;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAddMoto;
+        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DataGridView dgvMotoqueros;
         private System.Windows.Forms.Panel pnlAddMoto;
@@ -335,5 +356,6 @@ namespace UI
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnViajes;
     }
 }

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using CapaNegocio;
+using System;
 using System.Windows.Forms;
-using CapaNegocio;
 namespace UI
 {
     public partial class formNuevoMotoquero : Form
@@ -15,17 +9,25 @@ namespace UI
         public formNuevoMotoquero()
         {
             InitializeComponent();
+        }
+        private void formNuevoMotoquero_Load(object sender, EventArgs e)
+        {
             dgvMotoqueros.DataSource = Motoquero.Buscar(txtBuscar.Text);
         }
-
-        private void btnAddMoto_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Save();
+            SetDatos();
+            obj.Guardar();
+            MessageBox.Show("Guardado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            pnlAddMoto.Enabled = false;
             Clear();
             Search();
         }
+
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            obj = new Motoquero();
             pnlAddMoto.Enabled = true;
         }
 
@@ -45,13 +47,51 @@ namespace UI
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvMotoqueros.CurrentRow != null)
+                {
+                    Motoquero m = dgvMotoqueros.CurrentRow.DataBoundItem as Motoquero;
+                    m.Eliminar();
+                    Search();
+                    MessageBox.Show(m.Nombre + " " + m.Apellido + " fue eliminado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                    MessageBox.Show("Debe seleccionar una fila antes de eliminar", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvMotoqueros.CurrentRow != null)
+                {
+                    obj = dgvMotoqueros.CurrentRow.DataBoundItem as Motoquero;
+                    CargarDatosText();
+                    pnlAddMoto.Enabled = true;
+                }
+                else
+                    MessageBox.Show("Debe seleccionar una fila antes de modificar", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         #region METHODS
-        private void Save() {
-            Motoquero m = new Motoquero(0, txtNomMoto.Text, txtApeMoto.Text,
-                                            (int)numCelMoto.Value, txtModeloMoto.Text);
-            m.Guardar();
-            MessageBox.Show("Guardado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        private void SetDatos() {
+            obj.Nombre = txtNomMoto.Text;
+            obj.Apellido = txtApeMoto.Text;
+            obj.ModeloMoto = txtModeloMoto.Text;
+            obj.NumCelular = (int)numCelMoto.Value;
         }
 
         private void Clear() {
@@ -64,8 +104,15 @@ namespace UI
         private void Search() {
             dgvMotoqueros.DataSource = Motoquero.Buscar(txtBuscar.Text);
         }
-        #endregion
 
+        private void CargarDatosText() {
+            txtNomMoto.Text = obj.Nombre;
+            txtApeMoto.Text = obj.Apellido;
+            txtModeloMoto.Text = obj.ModeloMoto;
+            numCelMoto.Value = obj.NumCelular;
+
+        }
+        #endregion
 
     }
 }
