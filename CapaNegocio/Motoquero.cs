@@ -54,18 +54,64 @@ namespace CapaNegocio
         public void Guardar() {
             DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
             eMotoquero motoquero = new eMotoquero();
+
+            if (this.id == 0)
+            {
+                CargaFilaMotoquero(motoquero);
+                dc.eMotoquero.InsertOnSubmit(motoquero);
+            }
+            else { 
+                motoquero = (from x in dc.eMotoquero where x.id == this.id select x).FirstOrDefault();
+                CargaFilaMotoquero(motoquero);
+            }
+            dc.SubmitChanges();
+
+        }
+
+        public void CargaFilaMotoquero(eMotoquero motoquero) {
             motoquero.nombre = this.nombre;
             motoquero.apellido = this.apellido;
             motoquero.numCelular = this.numCelular;
             motoquero.modeloMoto = this.modeloMoto;
+        }
 
-            dc.eMotoquero.InsertOnSubmit(motoquero);
-            dc.SubmitChanges();
+        public static List<Motoquero> Buscar(string buscado)
+        {
+            List<Motoquero> resultados = new List<Motoquero>();
+            buscado = buscado.ToLower();
+
+            DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
+            var filas = from x in dc.eMotoquero
+                        where x.apellido.ToLower().Contains(buscado) || 
+                              x.nombre.ToLower().Contains(buscado) || 
+                              x.modeloMoto.ToLower().Contains(buscado)
+                        select x;
+
+            if (filas != null)
+            {
+                foreach (var f in filas)
+                {
+                    resultados.Add(new Motoquero(f.id, f.nombre, f.apellido, f.numCelular, f.modeloMoto));
+                }
+            }
+
+            return resultados;
 
         }
-        public void MostrarList() {
-            DCDataContext dcL = new DCDataContext();
-            listMotos = (from x in dcL.eMotoquero select x).ToList();
+
+        public void Eliminar()
+        {
+            DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
+            var enc = (from x in dc.ePersona where x.id == this.id select x).FirstOrDefault();
+            if (enc != null)
+            {
+                dc.ePersona.DeleteOnSubmit(enc);
+                dc.SubmitChanges();
+            }
+            else
+            {
+                throw new Exception("No se pudo eliminar el dato, no fue encontrado el id: " + this.id);
+            }
         }
         #endregion
     }

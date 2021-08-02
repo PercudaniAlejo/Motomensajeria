@@ -11,15 +11,39 @@ namespace UI
 {
     public partial class formNuevoMotoquero : Form
     {
+        private Motoquero obj;
         public formNuevoMotoquero()
         {
             InitializeComponent();
+            dgvMotoqueros.DataSource = Motoquero.Buscar(txtBuscar.Text);
         }
 
         private void btnAddMoto_Click(object sender, EventArgs e)
         {
             Save();
             Clear();
+            Search();
+        }
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            pnlAddMoto.Enabled = true;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Clear();
+            pnlAddMoto.Enabled = false;
+        }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Search();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #region METHODS
@@ -36,7 +60,12 @@ namespace UI
             numCelMoto.Value = 0;
             txtModeloMoto.Text = "";
         }
+
+        private void Search() {
+            dgvMotoqueros.DataSource = Motoquero.Buscar(txtBuscar.Text);
+        }
         #endregion
+
 
     }
 }
