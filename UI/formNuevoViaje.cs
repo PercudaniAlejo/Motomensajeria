@@ -50,6 +50,7 @@ namespace UI
             obj.DomicEntrega = txtDomicilio.Text;
             obj.LocalidadEntrega = txtLocalidad.Text;
             obj.Unidades = (int)numUnidades.Value;
+            obj.Fragil = checkFragil.Checked;
             obj.PrecioViaje = (int)numPrecioViaje.Value;
             obj.PrecioFinal = (int)numPrecioFinal.Value;
         }

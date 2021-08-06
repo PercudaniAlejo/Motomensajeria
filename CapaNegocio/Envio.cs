@@ -63,7 +63,7 @@ namespace CapaNegocio
 
         public Envio() {
             idEnvio = 0;
-            fecha = DateTime.Now;
+            fecha = DateTime.Today;
             nombreCliente = "";
             apellidoCliente = "";
             numCelCliente = 0;
@@ -134,7 +134,6 @@ namespace CapaNegocio
             }
 
             return resultados;
-
         }
 
         public void Eliminar()
@@ -152,6 +151,20 @@ namespace CapaNegocio
             }
         }
 
+        public static List<Envio> EnviosHoy() {
+            DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
+            List<Envio> resultados = new List<Envio>();
+            DateTime dateNow = DateTime.Today;
+            var filasEnviosHoy = from x in dc.eEnvio
+                        where x.fecha == dateNow select x;
+            foreach (var f in filasEnviosHoy)
+            {
+                resultados.Add(new Envio(f.idEnvio, f.fecha, f.nombreCliente, f.apellidoCliente,
+                                            f.numCelCliente, f.domicEntrega, f.localidadEntrega,
+                                            f.unidades, f.fragil, f.precioViaje, f.precioFinal));               
+            }
+            return resultados;
+        }
         #endregion
     }
 }

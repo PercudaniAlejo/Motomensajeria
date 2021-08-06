@@ -34,6 +34,18 @@ namespace UI
             n.ShowDialog();
             Search();
         }
+        private void btnViajesHoy_Click(object sender, EventArgs e)
+        {
+            dgvEnvios.DataSource = Envio.EnviosHoy();
+        }
+        private void checkBoxViajesHoy_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxViajesHoy.Checked)
+                dgvEnvios.DataSource = Envio.EnviosHoy();
+            else
+                dgvEnvios.DataSource = Envio.Buscar(txtBuscar.Text);
+
+        }
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             try
@@ -45,6 +57,10 @@ namespace UI
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+
+
 
         private void Search()
         {

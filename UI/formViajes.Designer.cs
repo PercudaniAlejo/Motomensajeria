@@ -37,6 +37,7 @@ namespace UI
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.checkBoxViajesHoy = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnvios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@ namespace UI
             this.dgvEnvios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEnvios.Location = new System.Drawing.Point(12, 89);
             this.dgvEnvios.Name = "dgvEnvios";
-            this.dgvEnvios.Size = new System.Drawing.Size(570, 258);
+            this.dgvEnvios.Size = new System.Drawing.Size(724, 257);
             this.dgvEnvios.TabIndex = 0;
             // 
             // txtBuscar
@@ -67,7 +68,7 @@ namespace UI
             this.btnDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDetalles.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
             this.btnDetalles.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDetalles.Location = new System.Drawing.Point(449, 363);
+            this.btnDetalles.Location = new System.Drawing.Point(603, 362);
             this.btnDetalles.Name = "btnDetalles";
             this.btnDetalles.Size = new System.Drawing.Size(133, 29);
             this.btnDetalles.TabIndex = 17;
@@ -100,7 +101,7 @@ namespace UI
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEliminar.Location = new System.Drawing.Point(183, 364);
+            this.btnEliminar.Location = new System.Drawing.Point(183, 363);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(78, 29);
             this.btnEliminar.TabIndex = 43;
@@ -117,7 +118,7 @@ namespace UI
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnModificar.Location = new System.Drawing.Point(97, 364);
+            this.btnModificar.Location = new System.Drawing.Point(97, 363);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(80, 29);
             this.btnModificar.TabIndex = 42;
@@ -134,7 +135,7 @@ namespace UI
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
             this.btnNuevo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNuevo.Location = new System.Drawing.Point(11, 364);
+            this.btnNuevo.Location = new System.Drawing.Point(11, 363);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(80, 29);
             this.btnNuevo.TabIndex = 41;
@@ -153,12 +154,28 @@ namespace UI
             this.label1.TabIndex = 44;
             this.label1.Text = "VIAJES";
             // 
+            // checkBoxViajesHoy
+            // 
+            this.checkBoxViajesHoy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxViajesHoy.AutoSize = true;
+            this.checkBoxViajesHoy.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.checkBoxViajesHoy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxViajesHoy.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBoxViajesHoy.Location = new System.Drawing.Point(614, 51);
+            this.checkBoxViajesHoy.Name = "checkBoxViajesHoy";
+            this.checkBoxViajesHoy.Size = new System.Drawing.Size(128, 25);
+            this.checkBoxViajesHoy.TabIndex = 46;
+            this.checkBoxViajesHoy.Text = "Viajes de hoy";
+            this.checkBoxViajesHoy.UseVisualStyleBackColor = true;
+            this.checkBoxViajesHoy.CheckedChanged += new System.EventHandler(this.checkBoxViajesHoy_CheckedChanged);
+            // 
             // formViajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(594, 427);
+            this.ClientSize = new System.Drawing.Size(748, 426);
+            this.Controls.Add(this.checkBoxViajesHoy);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -167,7 +184,7 @@ namespace UI
             this.Controls.Add(this.btnDetalles);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.dgvEnvios);
-            this.MinimumSize = new System.Drawing.Size(610, 465);
+            this.MinimumSize = new System.Drawing.Size(764, 465);
             this.Name = "formViajes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formViajes";
@@ -187,5 +204,6 @@ namespace UI
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBoxViajesHoy;
     }
 }
