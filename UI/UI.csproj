@@ -69,6 +69,12 @@
     <Compile Include="formViajes.Designer.cs">
       <DependentUpon>formViajes.cs</DependentUpon>
     </Compile>
+    <Compile Include="formViajesMoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formViajesMoto.Designer.cs">
+      <DependentUpon>formViajesMoto.cs</DependentUpon>
+    </Compile>
     <Compile Include="main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formViajes.resx">
       <DependentUpon>formViajes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formViajesMoto.resx">
+      <DependentUpon>formViajesMoto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.cs</DependentUpon>

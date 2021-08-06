@@ -12,7 +12,7 @@ namespace UI
         }
         private void formNuevoMotoquero_Load(object sender, EventArgs e)
         {
-            dgvMotoqueros.DataSource = Motoquero.Buscar(txtBuscar.Text);
+            Search();
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -33,6 +33,23 @@ namespace UI
         {
             Clear();
             pnlAddMoto.Enabled = false;
+        }
+        private void btnViajes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvMotoqueros.CurrentRow != null)
+                {
+                    formViajesMoto f = new formViajesMoto();
+                    f.ShowDialog();
+                }
+                else
+                    MessageBox.Show("Seleccione una fila.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {

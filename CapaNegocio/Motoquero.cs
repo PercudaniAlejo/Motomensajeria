@@ -80,7 +80,8 @@ namespace CapaNegocio
 
             DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
             var filas = from x in dc.eMotoquero
-                        where x.apellido.ToLower().Contains(buscado) || 
+                        where x.id.ToString().Contains(buscado) || 
+                              x.apellido.ToLower().Contains(buscado) || 
                               x.nombre.ToLower().Contains(buscado) || 
                               x.modeloMoto.ToLower().Contains(buscado)
                         select x;

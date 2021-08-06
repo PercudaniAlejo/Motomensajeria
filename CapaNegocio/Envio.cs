@@ -117,7 +117,8 @@ namespace CapaNegocio
 
             DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
             var filas = from x in dc.eEnvio
-                        where x.nombreCliente.ToLower().Contains(buscado) ||
+                        where x.idEnvio.ToString().Contains(buscado) ||
+                              x.nombreCliente.ToLower().Contains(buscado) ||
                               x.apellidoCliente.ToLower().Contains(buscado) ||
                               x.domicEntrega.ToLower().Contains(buscado) ||
                               x.localidadEntrega.ToLower().Contains(buscado)

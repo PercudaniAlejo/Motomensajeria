@@ -306,6 +306,7 @@ namespace UI
             this.btnViajes.TabIndex = 42;
             this.btnViajes.Text = "Ver viajes";
             this.btnViajes.UseVisualStyleBackColor = false;
+            this.btnViajes.Click += new System.EventHandler(this.btnViajes_Click);
             // 
             // formNuevoMotoquero
             // 
