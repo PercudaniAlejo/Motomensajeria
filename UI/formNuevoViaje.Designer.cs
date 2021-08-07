@@ -83,7 +83,7 @@ namespace UI
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(106, 20);
             this.dtpFecha.TabIndex = 4;
-            this.dtpFecha.Value = new System.DateTime(2021, 8, 6, 0, 0, 0, 0);
+            this.dtpFecha.Value = new System.DateTime(2021, 8, 3, 0, 0, 0, 0);
             // 
             // txtDomicilio
             // 

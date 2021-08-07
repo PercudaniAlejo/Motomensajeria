@@ -12,7 +12,7 @@ namespace UI
 {
     public partial class formNuevoViaje : Form
     {
-        Envio obj;
+        Envio obj; 
         public formNuevoViaje(Envio objEnvio = null)
         {
             InitializeComponent();
@@ -24,7 +24,10 @@ namespace UI
             if (obj != null)
                 CargarDatosModificar(obj);
             else
+            { 
+                Clear();
                 obj = new Envio();
+            }
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -58,7 +61,7 @@ namespace UI
 
         private void Clear()
         {
-            dtpFecha.Value = DateTime.Now;
+            dtpFecha.Value = DateTime.Today;
             txtNomCliente.Text = "";
             txtApeCliente.Text = "";
             numCelCliente.Value = 0;
@@ -82,10 +85,6 @@ namespace UI
             checkFragil.Checked = obj.Fragil;
             numPrecioViaje.Value = (int)obj.PrecioViaje;
             numPrecioFinal.Value = (int)obj.PrecioFinal;
-        }
-
-        private void SetCMB() {
-            Envio.CargarComboMotos();
         }
 
         #endregion
