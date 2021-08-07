@@ -26,6 +26,7 @@ namespace UI
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            Clear();
             obj = new Motoquero();
             pnlAddMoto.Enabled = true;
         }
