@@ -78,38 +78,6 @@ namespace CapaNegocio
         #endregion
 
         #region METHODS
-        public void Guardar()
-        {
-            DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
-            eEnvio envio = new eEnvio();
-
-            if (this.idEnvio == 0)
-            {
-                CargaFilaEnvio(envio);
-                dc.eEnvio.InsertOnSubmit(envio);
-            }
-            else {
-                envio = (from x in dc.eEnvio where x.idEnvio == this.idEnvio select x).FirstOrDefault();
-                CargaFilaEnvio(envio);
-            }
-            dc.SubmitChanges();
-        }
-
-        public void CargaFilaEnvio(eEnvio envio) {
-            envio.idEnvio = this.IdEnvio;
-            envio.fecha = this.Fecha;
-            envio.nombreCliente = this.NombreCliente;
-            envio.apellidoCliente = this.ApellidoCliente;
-            envio.numCelCliente = this.NumCelCliente;
-            envio.domicEntrega = this.DomicEntrega;
-            envio.localidadEntrega = this.LocalidadEntrega;
-            envio.unidades = this.Unidades;
-            envio.fragil = this.Fragil;
-            //envio.idMotoquero = this.IdMotoquero;
-            envio.precioViaje = this.PrecioViaje;
-            envio.precioFinal = this.PrecioFinal;
-        }
-
         public static List<Envio> Buscar(string buscado)
         {
             List<Envio> resultados = new List<Envio>();
@@ -136,7 +104,62 @@ namespace CapaNegocio
 
             return resultados;
         }
+        public static List<Envio> EnviosHoy() {
+            DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
+            List<Envio> resultados = new List<Envio>();
+            DateTime dateNow = DateTime.Today;
+            var filasEnviosHoy = from x in dc.eEnvio
+                        where x.fecha == dateNow select x;
+            foreach (var f in filasEnviosHoy)
+            {
+                resultados.Add(new Envio(f.idEnvio, f.fecha, f.nombreCliente, f.apellidoCliente,
+                                            f.numCelCliente, f.domicEntrega, f.localidadEntrega,
+                                            f.unidades, f.fragil, f.precioViaje, f.precioFinal));               
+            }
+            return resultados;
+        }
+        public static List<Motoquero> CargarComboMotos()
+        {
+            DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
+            List<Motoquero> motoqueros = new List<Motoquero>();
 
+            var filasMotoqueros = from x in dc.eMotoquero select x;
+            foreach (var f in filasMotoqueros)
+            {
+                motoqueros.Add(new Motoquero(f.id, f.nombre, f.apellido, f.numCelular, f.modeloMoto));
+            }
+            return motoqueros;
+        }
+        public void CargaFilaEnvio(eEnvio envio) {
+            envio.idEnvio = this.IdEnvio;
+            envio.fecha = this.Fecha;
+            envio.nombreCliente = this.NombreCliente;
+            envio.apellidoCliente = this.ApellidoCliente;
+            envio.numCelCliente = this.NumCelCliente;
+            envio.domicEntrega = this.DomicEntrega;
+            envio.localidadEntrega = this.LocalidadEntrega;
+            envio.unidades = this.Unidades;
+            envio.fragil = this.Fragil;
+            //envio.idMotoquero = this.IdMotoquero;
+            envio.precioViaje = this.PrecioViaje;
+            envio.precioFinal = this.PrecioFinal;
+        }
+        public void Guardar()
+        {
+            DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
+            eEnvio envio = new eEnvio();
+
+            if (this.idEnvio == 0)
+            {
+                CargaFilaEnvio(envio);
+                dc.eEnvio.InsertOnSubmit(envio);
+            }
+            else {
+                envio = (from x in dc.eEnvio where x.idEnvio == this.idEnvio select x).FirstOrDefault();
+                CargaFilaEnvio(envio);
+            }
+            dc.SubmitChanges();
+        }
         public void Eliminar()
         {
             DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
@@ -152,20 +175,6 @@ namespace CapaNegocio
             }
         }
 
-        public static List<Envio> EnviosHoy() {
-            DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
-            List<Envio> resultados = new List<Envio>();
-            DateTime dateNow = DateTime.Today;
-            var filasEnviosHoy = from x in dc.eEnvio
-                        where x.fecha == dateNow select x;
-            foreach (var f in filasEnviosHoy)
-            {
-                resultados.Add(new Envio(f.idEnvio, f.fecha, f.nombreCliente, f.apellidoCliente,
-                                            f.numCelCliente, f.domicEntrega, f.localidadEntrega,
-                                            f.unidades, f.fragil, f.precioViaje, f.precioFinal));               
-            }
-            return resultados;
-        }
         #endregion
     }
 }

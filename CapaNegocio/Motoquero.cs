@@ -47,7 +47,7 @@ namespace CapaNegocio
         #region METHODS
         public override string ToString()
         {
-            return string.Concat(id, " - ", nombre, " ", apellido, " - ", numCelular);
+            return string.Concat(nombre, " ", apellido);
         }
 
         public void Guardar() {

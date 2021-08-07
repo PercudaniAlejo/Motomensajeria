@@ -34,10 +34,7 @@ namespace UI
             n.ShowDialog();
             Search();
         }
-        private void btnViajesHoy_Click(object sender, EventArgs e)
-        {
-            dgvEnvios.DataSource = Envio.EnviosHoy();
-        }
+
         private void checkBoxViajesHoy_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxViajesHoy.Checked)

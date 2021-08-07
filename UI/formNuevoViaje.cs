@@ -17,6 +17,7 @@ namespace UI
         {
             InitializeComponent();
             obj = objEnvio;
+            cmbMotoquero.DataSource = Envio.CargarComboMotos();
         }
         private void formNuevoViaje_Load(object sender, EventArgs e)
         {
@@ -81,6 +82,10 @@ namespace UI
             checkFragil.Checked = obj.Fragil;
             numPrecioViaje.Value = (int)obj.PrecioViaje;
             numPrecioFinal.Value = (int)obj.PrecioFinal;
+        }
+
+        private void SetCMB() {
+            Envio.CargarComboMotos();
         }
 
         #endregion
