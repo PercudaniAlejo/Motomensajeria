@@ -109,7 +109,10 @@ namespace CapaNegocio
             List<Envio> resultados = new List<Envio>();
             DateTime dateNow = DateTime.Today;
             var filasEnviosHoy = from x in dc.eEnvio
-                        where x.fecha == dateNow select x;
+                        where x.fecha.Year == dateNow.Year &&
+                        x.fecha.Month == dateNow.Month &&
+                        x.fecha.Day == dateNow.Day select x
+                        ;
             foreach (var f in filasEnviosHoy)
             {
                 resultados.Add(new Envio(f.idEnvio, f.fecha, f.nombreCliente, f.apellidoCliente,
