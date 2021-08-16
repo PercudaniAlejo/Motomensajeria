@@ -112,6 +112,15 @@ namespace CapaNegocio
                 throw new Exception("No se pudo eliminar el dato, no fue encontrado el id: " + this.id);
             }
         }
+
+        public static Motoquero BuscarPorId(int idBuscado)
+        {
+            DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
+            var enc = (from x in dc.eMotoquero where x.id == idBuscado select x).FirstOrDefault();
+            if (enc != null)
+                return new Motoquero(enc.id, enc.nombre, enc.apellido, enc.numCelular, enc.modeloMoto);
+            return null;
+        }
         #endregion
     }
 }

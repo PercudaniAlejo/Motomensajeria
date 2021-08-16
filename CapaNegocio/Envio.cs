@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using CapaDatos;
@@ -20,9 +21,10 @@ namespace CapaNegocio
         private string localidadEntrega;
         private int unidades;
         private Boolean fragil;
-        //private int idMotoquero;
         private double precioViaje;
         private double precioFinal;
+        private int fkMotoquero;
+        private Motoquero motoquero;
         #endregion
 
         #region PROPERTIES
@@ -35,9 +37,23 @@ namespace CapaNegocio
         public string LocalidadEntrega { get => localidadEntrega; set => localidadEntrega = value; }
         public int Unidades { get => unidades; set => unidades = value; }
         public bool Fragil { get => fragil; set => fragil = value; }
-        //public int IdMotoquero { get => idMotoquero; set => idMotoquero = value; }
         public double PrecioViaje { get => precioViaje; set => precioViaje = value; }
         public double PrecioFinal { get => precioFinal; set => precioFinal = value; }
+
+        [Browsable(false)]
+        public int FkMotoquero { get => fkMotoquero; set => fkMotoquero = value; }
+        public Motoquero Motoquero {
+            get {
+                if (fkMotoquero != 0 && motoquero == null)
+                    motoquero = Motoquero.BuscarPorId(fkMotoquero);
+                return motoquero;
+            }
+            set {
+                motoquero = value;
+                fkMotoquero = value.Id;
+            }
+        }
+
 
         #endregion
 
@@ -45,7 +61,7 @@ namespace CapaNegocio
         public Envio(int idEnvio, DateTime fecha, string nombreCliente,
             string apellidoCliente, int numCelCliente, string domicEntrega,
             string localidadEntrega, int unidades, bool fragil,
-            double precioViaje, double precioFinal)
+            double precioViaje, double precioFinal, int fkMotoquero)
         {
             this.idEnvio = idEnvio;
             this.fecha = fecha;
@@ -56,9 +72,9 @@ namespace CapaNegocio
             this.localidadEntrega = localidadEntrega;
             this.unidades = unidades;
             this.fragil = fragil;
-            //this.idMotoquero = idMotoquero;
             this.precioViaje = precioViaje;
             this.precioFinal = precioFinal;
+            this.fkMotoquero = fkMotoquero;
         }
 
         public Envio() {
@@ -71,9 +87,9 @@ namespace CapaNegocio
             localidadEntrega = "";
             unidades = 1;
             fragil = false;
-            //idMotoquero = 0;
             precioViaje = 0.0;
             precioFinal = 0.0;
+            fkMotoquero = 0;
         }
         #endregion
 
@@ -89,7 +105,9 @@ namespace CapaNegocio
                               x.nombreCliente.ToLower().Contains(buscado) ||
                               x.apellidoCliente.ToLower().Contains(buscado) ||
                               x.domicEntrega.ToLower().Contains(buscado) ||
-                              x.localidadEntrega.ToLower().Contains(buscado)
+                              x.localidadEntrega.ToLower().Contains(buscado) ||
+                              x.eMotoquero.nombre.ToLower().Contains(buscado) ||
+                              x.eMotoquero.apellido.ToLower().Contains(buscado) 
                         select x;
 
             if (filas != null)
@@ -98,7 +116,7 @@ namespace CapaNegocio
                 {
                     resultados.Add(new Envio(f.idEnvio, f.fecha, f.nombreCliente, f.apellidoCliente,
                                             f.numCelCliente, f.domicEntrega, f.localidadEntrega,
-                                            f.unidades, f.fragil, f.precioViaje, f.precioFinal));
+                                            f.unidades, f.fragil, f.precioViaje, f.precioFinal, f.FKMotoquero));
                 }
             }
 
@@ -117,7 +135,7 @@ namespace CapaNegocio
             {
                 resultados.Add(new Envio(f.idEnvio, f.fecha, f.nombreCliente, f.apellidoCliente,
                                             f.numCelCliente, f.domicEntrega, f.localidadEntrega,
-                                            f.unidades, f.fragil, f.precioViaje, f.precioFinal));               
+                                            f.unidades, f.fragil, f.precioViaje, f.precioFinal, f.FKMotoquero));               
             }
             return resultados;
         }
@@ -146,6 +164,7 @@ namespace CapaNegocio
             //envio.idMotoquero = this.IdMotoquero;
             envio.precioViaje = this.PrecioViaje;
             envio.precioFinal = this.PrecioFinal;
+            envio.FKMotoquero = this.fkMotoquero;
         }
         public void Guardar()
         {

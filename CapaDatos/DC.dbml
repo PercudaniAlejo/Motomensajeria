@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MotoMensajeria" Class="DCDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=PC94\SQLEXPRESS;Initial Catalog=MotoMensajeria;User ID=AlejoDB" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="MotoMensajeriaConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-RR1BBOV\SQLEXPRESS;Initial Catalog=MotoMensajeria;User ID=AlejoDB" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="MotoMensajeriaConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Envio" Member="eEnvio">
     <Type Name="eEnvio">
       <Column Name="idEnvio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

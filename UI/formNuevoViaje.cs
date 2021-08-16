@@ -12,7 +12,7 @@ namespace UI
 {
     public partial class formNuevoViaje : Form
     {
-        Envio obj; 
+        private Envio obj; 
         public formNuevoViaje(Envio objEnvio = null)
         {
             InitializeComponent();
@@ -57,6 +57,7 @@ namespace UI
             obj.Fragil = checkFragil.Checked;
             obj.PrecioViaje = (int)numPrecioViaje.Value;
             obj.PrecioFinal = (int)numPrecioFinal.Value;
+            obj.Motoquero = cmbMotoquero.SelectedItem as Motoquero;
         }
 
         private void Clear()
@@ -85,6 +86,8 @@ namespace UI
             checkFragil.Checked = obj.Fragil;
             numPrecioViaje.Value = (int)obj.PrecioViaje;
             numPrecioFinal.Value = (int)obj.PrecioFinal;
+            if (obj.Motoquero != null)
+                cmbMotoquero.Text = obj.Motoquero.ToString();
         }
 
         #endregion

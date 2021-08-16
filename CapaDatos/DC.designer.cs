@@ -39,7 +39,7 @@ namespace CapaDatos
     #endregion
 		
 		public DCDataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.MotoMensajeriaConnectionString1, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.MotoMensajeriaConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
