@@ -81,7 +81,7 @@ namespace UI
             this.MinimumSize = new System.Drawing.Size(765, 410);
             this.Name = "formViajesMoto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "formViajesMoto";
+            this.Text = "Viajes de la moto";
             this.Load += new System.EventHandler(this.formViajesMoto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvViajesMotos)).EndInit();
             this.ResumeLayout(false);

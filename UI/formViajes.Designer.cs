@@ -187,7 +187,7 @@ namespace UI
             this.MinimumSize = new System.Drawing.Size(764, 465);
             this.Name = "formViajes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "formViajes";
+            this.Text = "Viajes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnvios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

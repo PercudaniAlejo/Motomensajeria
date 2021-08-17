@@ -17,7 +17,7 @@ namespace UI
         {
             InitializeComponent();
             obj = objEnvio;
-            cmbMotoquero.DataSource = Envio.CargarComboMotos();
+            CargarCMB();
         }
         private void formNuevoViaje_Load(object sender, EventArgs e)
         {
@@ -59,7 +59,6 @@ namespace UI
             obj.PrecioFinal = (int)numPrecioFinal.Value;
             obj.Motoquero = cmbMotoquero.SelectedItem as Motoquero;
         }
-
         private void Clear()
         {
             dtpFecha.Value = DateTime.Today;
@@ -73,7 +72,6 @@ namespace UI
             numPrecioViaje.Value = 0;
             numPrecioFinal.Value = 0;
         }
-
         private void CargarDatosModificar(Envio obj)
         {
             txtApeCliente.Text = obj.ApellidoCliente;
@@ -89,7 +87,10 @@ namespace UI
             if (obj.Motoquero != null)
                 cmbMotoquero.Text = obj.Motoquero.ToString();
         }
-
+        private void CargarCMB() {
+            cmbMotoquero.DataSource = null;
+            cmbMotoquero.DataSource = Motoquero.Buscar();
+        }
         #endregion
     }
 }

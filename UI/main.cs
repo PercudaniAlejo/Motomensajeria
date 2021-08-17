@@ -18,7 +18,7 @@ namespace UI
 
         private void btnNuevaMoto_Click_1(object sender, EventArgs e)
         {
-            formNuevoMotoquero f = new formNuevoMotoquero();
+            formMotoqueros f = new formMotoqueros();
             f.ShowDialog();
         }
 

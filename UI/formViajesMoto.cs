@@ -12,9 +12,11 @@ namespace UI
 {
     public partial class formViajesMoto : Form
     {
-        public formViajesMoto()
+        private Motoquero obj;
+        public formViajesMoto(Motoquero objEnvio = null)
         {
             InitializeComponent();
+            obj = objEnvio;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -27,7 +29,6 @@ namespace UI
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
         private void formViajesMoto_Load(object sender, EventArgs e)
         {
@@ -35,7 +36,7 @@ namespace UI
         }
         private void Search()
         {
-            dgvViajesMotos.DataSource = Envio.Buscar(txtBuscar.Text);
+            dgvViajesMotos.DataSource = Envio.EnviosPorMoto(obj);
         }
 
     }

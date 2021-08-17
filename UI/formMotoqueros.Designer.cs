@@ -1,7 +1,7 @@
 ﻿
 namespace UI
 {
-    partial class formNuevoMotoquero
+    partial class formMotoqueros
     {
         /// <summary>
         /// Required designer variable.

@@ -382,7 +382,7 @@ namespace UI
             this.MinimumSize = new System.Drawing.Size(370, 730);
             this.Name = "formNuevoViaje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nuevo vieje";
+            this.Text = "Nuevo viaje";
             this.Load += new System.EventHandler(this.formNuevoViaje_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numUnidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioViaje)).EndInit();

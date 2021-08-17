@@ -13,7 +13,6 @@ namespace UI
     public partial class formViajes : Form
     {
         Envio objEnvio;
-        Envio obj;
         public formViajes()
         {
             InitializeComponent();

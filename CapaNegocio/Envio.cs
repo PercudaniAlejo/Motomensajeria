@@ -139,18 +139,21 @@ namespace CapaNegocio
             }
             return resultados;
         }
-        public static List<Motoquero> CargarComboMotos()
-        {
+        public static List<Envio> EnviosPorMoto(Motoquero objM) {
             DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
-            List<Motoquero> motoqueros = new List<Motoquero>();
-
-            var filasMotoqueros = from x in dc.eMotoquero select x;
-            foreach (var f in filasMotoqueros)
+            List<Envio> resultados = new List<Envio>();
+            var filasEnviosPorMoto = from x in dc.eEnvio
+                                 where x.FKMotoquero == objM.Id
+                                 select x;
+            foreach (var f in filasEnviosPorMoto)
             {
-                motoqueros.Add(new Motoquero(f.id, f.nombre, f.apellido, f.numCelular, f.modeloMoto));
+                resultados.Add(new Envio(f.idEnvio, f.fecha, f.nombreCliente, f.apellidoCliente,
+                                            f.numCelCliente, f.domicEntrega, f.localidadEntrega,
+                                            f.unidades, f.fragil, f.precioViaje, f.precioFinal, f.FKMotoquero));
             }
-            return motoqueros;
+            return resultados;
         }
+
         public void CargaFilaEnvio(eEnvio envio) {
             envio.idEnvio = this.IdEnvio;
             envio.fecha = this.Fecha;

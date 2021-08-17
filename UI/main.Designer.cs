@@ -101,7 +101,7 @@ namespace UI
             this.MinimumSize = new System.Drawing.Size(250, 320);
             this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu";
+            this.Text = "ONTIME";
             this.ResumeLayout(false);
             this.PerformLayout();
 

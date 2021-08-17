@@ -73,7 +73,7 @@ namespace CapaNegocio
             motoquero.modeloMoto = this.modeloMoto;
         }
 
-        public static List<Motoquero> Buscar(string buscado)
+        public static List<Motoquero> Buscar(string buscado="")
         {
             List<Motoquero> resultados = new List<Motoquero>();
             buscado = buscado.ToLower();
@@ -121,6 +121,7 @@ namespace CapaNegocio
                 return new Motoquero(enc.id, enc.nombre, enc.apellido, enc.numCelular, enc.modeloMoto);
             return null;
         }
+
         #endregion
     }
 }

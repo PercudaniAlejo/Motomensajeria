@@ -3,10 +3,10 @@ using System;
 using System.Windows.Forms;
 namespace UI
 {
-    public partial class formNuevoMotoquero : Form
+    public partial class formMotoqueros : Form
     {
         private Motoquero obj;
-        public formNuevoMotoquero()
+        public formMotoqueros()
         {
             InitializeComponent();
         }
@@ -41,7 +41,8 @@ namespace UI
             {
                 if (dgvMotoqueros.CurrentRow != null)
                 {
-                    formViajesMoto f = new formViajesMoto();
+                    obj = Selected();
+                    formViajesMoto f = new formViajesMoto(obj);
                     f.ShowDialog();
                 }
                 else
@@ -77,10 +78,15 @@ namespace UI
                 else
                     MessageBox.Show("Debe seleccionar una fila antes de eliminar", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                MessageBox.Show("Elimine todos los envios relacionados con el motoquero antes de eliminarlo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {
@@ -109,18 +115,15 @@ namespace UI
             obj.ModeloMoto = txtModeloMoto.Text;
             obj.NumCelular = (int)numCelMoto.Value;
         }
-
         private void Clear() {
             txtNomMoto.Text = "";
             txtApeMoto.Text = "";
             numCelMoto.Value = 0;
             txtModeloMoto.Text = "";
         }
-
         private void Search() {
             dgvMotoqueros.DataSource = Motoquero.Buscar(txtBuscar.Text);
         }
-
         private void CargarDatosText() {
             txtNomMoto.Text = obj.Nombre;
             txtApeMoto.Text = obj.Apellido;
@@ -128,7 +131,15 @@ namespace UI
             numCelMoto.Value = obj.NumCelular;
 
         }
-        #endregion
+        private Motoquero Selected()
+        {
+            if (dgvMotoqueros.CurrentRow != null)
+                return dgvMotoqueros.CurrentRow.DataBoundItem as Motoquero;
+            return null;
 
+            #endregion
+
+        }
     }
+
 }

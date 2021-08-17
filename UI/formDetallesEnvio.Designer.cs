@@ -371,7 +371,8 @@ namespace UI
             this.MaximumSize = new System.Drawing.Size(370, 730);
             this.MinimumSize = new System.Drawing.Size(370, 730);
             this.Name = "formDetallesEnvio";
-            this.Text = "formDetallesEnvio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Detalles del envío";
             this.Load += new System.EventHandler(this.formDetallesEnvio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioFinal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioViaje)).EndInit();

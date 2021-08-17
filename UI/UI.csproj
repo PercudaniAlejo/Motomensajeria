@@ -51,11 +51,11 @@
     <Compile Include="formDetallesEnvio.Designer.cs">
       <DependentUpon>formDetallesEnvio.cs</DependentUpon>
     </Compile>
-    <Compile Include="formNuevoMotoquero.cs">
+    <Compile Include="formMotoqueros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formNuevoMotoquero.Designer.cs">
-      <DependentUpon>formNuevoMotoquero.cs</DependentUpon>
+    <Compile Include="formMotoqueros.Designer.cs">
+      <DependentUpon>formMotoqueros.cs</DependentUpon>
     </Compile>
     <Compile Include="formNuevoViaje.cs">
       <SubType>Form</SubType>
@@ -86,8 +86,8 @@
     <EmbeddedResource Include="formDetallesEnvio.resx">
       <DependentUpon>formDetallesEnvio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formNuevoMotoquero.resx">
-      <DependentUpon>formNuevoMotoquero.cs</DependentUpon>
+    <EmbeddedResource Include="formMotoqueros.resx">
+      <DependentUpon>formMotoqueros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formNuevoViaje.resx">
       <DependentUpon>formNuevoViaje.cs</DependentUpon>
