@@ -39,6 +39,7 @@ namespace UI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(18, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 22);
@@ -49,6 +50,7 @@ namespace UI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(65, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 25);
@@ -57,12 +59,12 @@ namespace UI
             // 
             // btnNuevoViaje
             // 
-            this.btnNuevoViaje.BackColor = System.Drawing.Color.Silver;
+            this.btnNuevoViaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(96)))), ((int)(((byte)(114)))));
             this.btnNuevoViaje.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnNuevoViaje.FlatAppearance.BorderSize = 0;
-            this.btnNuevoViaje.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNuevoViaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
-            this.btnNuevoViaje.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnNuevoViaje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoViaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F);
+            this.btnNuevoViaje.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnNuevoViaje.Location = new System.Drawing.Point(22, 105);
             this.btnNuevoViaje.Name = "btnNuevoViaje";
             this.btnNuevoViaje.Size = new System.Drawing.Size(187, 60);
@@ -73,12 +75,12 @@ namespace UI
             // 
             // btnNuevaMoto
             // 
-            this.btnNuevaMoto.BackColor = System.Drawing.Color.Silver;
+            this.btnNuevaMoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(96)))), ((int)(((byte)(114)))));
             this.btnNuevaMoto.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnNuevaMoto.FlatAppearance.BorderSize = 0;
-            this.btnNuevaMoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNuevaMoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
-            this.btnNuevaMoto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnNuevaMoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaMoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F);
+            this.btnNuevaMoto.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnNuevaMoto.Location = new System.Drawing.Point(22, 194);
             this.btnNuevaMoto.Name = "btnNuevaMoto";
             this.btnNuevaMoto.Size = new System.Drawing.Size(187, 60);
@@ -91,7 +93,7 @@ namespace UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(234, 281);
             this.Controls.Add(this.btnNuevaMoto);
             this.Controls.Add(this.btnNuevoViaje);

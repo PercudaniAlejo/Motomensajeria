@@ -30,7 +30,7 @@ namespace UI
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void formViajesMoto_Load(object sender, EventArgs e)
+        private void FormViajesMoto_Load(object sender, EventArgs e)
         {
             Search();
         }

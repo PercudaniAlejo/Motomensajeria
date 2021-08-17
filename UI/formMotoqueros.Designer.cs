@@ -29,6 +29,10 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblCelularMoto = new System.Windows.Forms.Label();
             this.numCelMoto = new System.Windows.Forms.NumericUpDown();
             this.lblApeMoto = new System.Windows.Forms.Label();
@@ -37,10 +41,8 @@ namespace UI
             this.txtNomMoto = new System.Windows.Forms.TextBox();
             this.lblModeloMoto = new System.Windows.Forms.Label();
             this.txtModeloMoto = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.dgvMotoqueros = new System.Windows.Forms.DataGridView();
             this.pnlAddMoto = new System.Windows.Forms.Panel();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -48,9 +50,11 @@ namespace UI
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnViajes = new System.Windows.Forms.Button();
+            this.dgvMotoqueros = new System.Windows.Forms.DataGridView();
+            this.lblTituloViajes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numCelMoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMotoqueros)).BeginInit();
             this.pnlAddMoto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMotoqueros)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCelularMoto
@@ -68,6 +72,7 @@ namespace UI
             // numCelMoto
             // 
             this.numCelMoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.numCelMoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numCelMoto.Location = new System.Drawing.Point(17, 91);
             this.numCelMoto.Maximum = new decimal(new int[] {
             1410065407,
@@ -94,6 +99,7 @@ namespace UI
             // txtApeMoto
             // 
             this.txtApeMoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtApeMoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtApeMoto.Location = new System.Drawing.Point(256, 39);
             this.txtApeMoto.Name = "txtApeMoto";
             this.txtApeMoto.Size = new System.Drawing.Size(169, 20);
@@ -114,6 +120,7 @@ namespace UI
             // txtNomMoto
             // 
             this.txtNomMoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtNomMoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNomMoto.Location = new System.Drawing.Point(17, 39);
             this.txtNomMoto.Name = "txtNomMoto";
             this.txtNomMoto.Size = new System.Drawing.Size(169, 20);
@@ -134,31 +141,21 @@ namespace UI
             // txtModeloMoto
             // 
             this.txtModeloMoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtModeloMoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtModeloMoto.Location = new System.Drawing.Point(256, 90);
             this.txtModeloMoto.Name = "txtModeloMoto";
             this.txtModeloMoto.Size = new System.Drawing.Size(169, 20);
             this.txtModeloMoto.TabIndex = 33;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(12, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 16);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Nuevo motoquero";
-            // 
             // btnAceptar
             // 
             this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAceptar.BackColor = System.Drawing.Color.Silver;
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(96)))), ((int)(((byte)(114)))));
             this.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
-            this.btnAceptar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft YaHei", 11F);
+            this.btnAceptar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAceptar.Location = new System.Drawing.Point(479, 26);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(80, 33);
@@ -170,12 +167,12 @@ namespace UI
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancelar.BackColor = System.Drawing.Color.Silver;
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(96)))), ((int)(((byte)(114)))));
             this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft YaHei", 11F);
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCancelar.Location = new System.Drawing.Point(479, 78);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 33);
@@ -183,17 +180,6 @@ namespace UI
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // dgvMotoqueros
-            // 
-            this.dgvMotoqueros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvMotoqueros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMotoqueros.Location = new System.Drawing.Point(15, 48);
-            this.dgvMotoqueros.Name = "dgvMotoqueros";
-            this.dgvMotoqueros.Size = new System.Drawing.Size(544, 235);
-            this.dgvMotoqueros.TabIndex = 37;
             // 
             // pnlAddMoto
             // 
@@ -218,15 +204,15 @@ namespace UI
             // btnNuevo
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNuevo.BackColor = System.Drawing.Color.Silver;
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(96)))), ((int)(((byte)(114)))));
             this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnNuevo.FlatAppearance.BorderSize = 0;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
-            this.btnNuevo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft YaHei", 11F);
+            this.btnNuevo.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnNuevo.Location = new System.Drawing.Point(15, 289);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(80, 33);
+            this.btnNuevo.Size = new System.Drawing.Size(95, 33);
             this.btnNuevo.TabIndex = 37;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -235,15 +221,15 @@ namespace UI
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModificar.BackColor = System.Drawing.Color.Silver;
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(96)))), ((int)(((byte)(114)))));
             this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
-            this.btnModificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnModificar.Location = new System.Drawing.Point(105, 289);
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft YaHei", 11F);
+            this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnModificar.Location = new System.Drawing.Point(116, 289);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(80, 33);
+            this.btnModificar.Size = new System.Drawing.Size(93, 33);
             this.btnModificar.TabIndex = 39;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -252,15 +238,15 @@ namespace UI
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEliminar.BackColor = System.Drawing.Color.Silver;
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(96)))), ((int)(((byte)(114)))));
             this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
-            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEliminar.Location = new System.Drawing.Point(191, 289);
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei", 11F);
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEliminar.Location = new System.Drawing.Point(215, 289);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(80, 33);
+            this.btnEliminar.Size = new System.Drawing.Size(93, 33);
             this.btnEliminar.TabIndex = 40;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -269,6 +255,7 @@ namespace UI
             // txtBuscar
             // 
             this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscar.Location = new System.Drawing.Point(390, 16);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(169, 20);
@@ -277,12 +264,12 @@ namespace UI
             // btnBuscar
             // 
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBuscar.BackColor = System.Drawing.Color.Silver;
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(96)))), ((int)(((byte)(114)))));
             this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft YaHei", 8F);
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnBuscar.Location = new System.Drawing.Point(304, 16);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(80, 20);
@@ -294,12 +281,12 @@ namespace UI
             // btnViajes
             // 
             this.btnViajes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnViajes.BackColor = System.Drawing.Color.Silver;
+            this.btnViajes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(96)))), ((int)(((byte)(114)))));
             this.btnViajes.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnViajes.FlatAppearance.BorderSize = 0;
-            this.btnViajes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnViajes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.99F);
-            this.btnViajes.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnViajes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViajes.Font = new System.Drawing.Font("Microsoft YaHei", 11F);
+            this.btnViajes.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnViajes.Location = new System.Drawing.Point(451, 289);
             this.btnViajes.Name = "btnViajes";
             this.btnViajes.Size = new System.Drawing.Size(108, 33);
@@ -308,12 +295,74 @@ namespace UI
             this.btnViajes.UseVisualStyleBackColor = false;
             this.btnViajes.Click += new System.EventHandler(this.btnViajes_Click);
             // 
-            // formNuevoMotoquero
+            // dgvMotoqueros
+            // 
+            this.dgvMotoqueros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMotoqueros.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
+            this.dgvMotoqueros.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMotoqueros.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMotoqueros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMotoqueros.ColumnHeadersHeight = 40;
+            this.dgvMotoqueros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMotoqueros.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMotoqueros.EnableHeadersVisualStyles = false;
+            this.dgvMotoqueros.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(75)))));
+            this.dgvMotoqueros.Location = new System.Drawing.Point(15, 54);
+            this.dgvMotoqueros.Name = "dgvMotoqueros";
+            this.dgvMotoqueros.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMotoqueros.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvMotoqueros.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvMotoqueros.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvMotoqueros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMotoqueros.Size = new System.Drawing.Size(544, 229);
+            this.dgvMotoqueros.TabIndex = 47;
+            // 
+            // lblTituloViajes
+            // 
+            this.lblTituloViajes.AutoSize = true;
+            this.lblTituloViajes.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloViajes.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblTituloViajes.Location = new System.Drawing.Point(13, 14);
+            this.lblTituloViajes.Name = "lblTituloViajes";
+            this.lblTituloViajes.Size = new System.Drawing.Size(184, 22);
+            this.lblTituloViajes.TabIndex = 48;
+            this.lblTituloViajes.Text = "NUEVO MOTOQUERO";
+            // 
+            // formMotoqueros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(571, 458);
+            this.Controls.Add(this.lblTituloViajes);
+            this.Controls.Add(this.dgvMotoqueros);
             this.Controls.Add(this.btnViajes);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
@@ -321,17 +370,15 @@ namespace UI
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.pnlAddMoto);
-            this.Controls.Add(this.dgvMotoqueros);
-            this.Controls.Add(this.label1);
             this.MinimumSize = new System.Drawing.Size(587, 497);
-            this.Name = "formNuevoMotoquero";
+            this.Name = "formMotoqueros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo motoquero";
             this.Load += new System.EventHandler(this.formNuevoMotoquero_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numCelMoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMotoqueros)).EndInit();
             this.pnlAddMoto.ResumeLayout(false);
             this.pnlAddMoto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMotoqueros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,10 +394,8 @@ namespace UI
         private System.Windows.Forms.TextBox txtNomMoto;
         private System.Windows.Forms.Label lblModeloMoto;
         private System.Windows.Forms.TextBox txtModeloMoto;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.DataGridView dgvMotoqueros;
         private System.Windows.Forms.Panel pnlAddMoto;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnModificar;
@@ -358,5 +403,7 @@ namespace UI
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnViajes;
+        private System.Windows.Forms.DataGridView dgvMotoqueros;
+        private System.Windows.Forms.Label lblTituloViajes;
     }
 }
