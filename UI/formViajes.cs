@@ -55,9 +55,6 @@ namespace UI
         }
 
 
-
-
-
         private void Search()
         {
             dgvEnvios.DataSource = Envio.Buscar(txtBuscar.Text);
@@ -70,9 +67,12 @@ namespace UI
                 if (dgvEnvios.CurrentRow != null)
                 {
                     Envio envio = dgvEnvios.CurrentRow.DataBoundItem as Envio;
-                    envio.Eliminar();
-                    Search();
-                    MessageBox.Show("Envio eliminado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (MessageBox.Show("Eliminar el envio con ID: " + envio.IdEnvio.ToString(), "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        envio.Eliminar();
+                        MessageBox.Show("Envio eliminado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Search();
+                    }
                 }
                 else
                     MessageBox.Show("Debe seleccionar una fila antes de eliminar", "", MessageBoxButtons.OK, MessageBoxIcon.Information);

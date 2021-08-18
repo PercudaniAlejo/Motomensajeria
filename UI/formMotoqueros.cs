@@ -71,9 +71,12 @@ namespace UI
                 if (dgvMotoqueros.CurrentRow != null)
                 {
                     Motoquero m = dgvMotoqueros.CurrentRow.DataBoundItem as Motoquero;
-                    m.Eliminar();
-                    Search();
-                    MessageBox.Show(m.Nombre + " " + m.Apellido + " fue eliminado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (MessageBox.Show("Eliminar a: " + m.Nombre + " " + m.Apellido, "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        m.Eliminar();
+                        MessageBox.Show(m.Nombre + " " + m.Apellido + " fue eliminado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Search();
+                    }
                 }
                 else
                     MessageBox.Show("Debe seleccionar una fila antes de eliminar", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
