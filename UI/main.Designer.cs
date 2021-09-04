@@ -33,6 +33,7 @@ namespace UI
             this.label2 = new System.Windows.Forms.Label();
             this.btnNuevoViaje = new System.Windows.Forms.Button();
             this.btnNuevaMoto = new System.Windows.Forms.Button();
+            this.btnGanancia = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -89,18 +90,33 @@ namespace UI
             this.btnNuevaMoto.UseVisualStyleBackColor = false;
             this.btnNuevaMoto.Click += new System.EventHandler(this.btnNuevaMoto_Click_1);
             // 
+            // btnGanancia
+            // 
+            this.btnGanancia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(96)))), ((int)(((byte)(114)))));
+            this.btnGanancia.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnGanancia.FlatAppearance.BorderSize = 0;
+            this.btnGanancia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGanancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F);
+            this.btnGanancia.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnGanancia.Location = new System.Drawing.Point(22, 287);
+            this.btnGanancia.Name = "btnGanancia";
+            this.btnGanancia.Size = new System.Drawing.Size(187, 60);
+            this.btnGanancia.TabIndex = 38;
+            this.btnGanancia.Text = "GANANCIAS";
+            this.btnGanancia.UseVisualStyleBackColor = false;
+            this.btnGanancia.Click += new System.EventHandler(this.btnGanancia_Click);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(75)))));
-            this.ClientSize = new System.Drawing.Size(234, 281);
+            this.ClientSize = new System.Drawing.Size(234, 377);
+            this.Controls.Add(this.btnGanancia);
             this.Controls.Add(this.btnNuevaMoto);
             this.Controls.Add(this.btnNuevoViaje);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(250, 320);
-            this.MinimumSize = new System.Drawing.Size(250, 320);
             this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ONTIME";
@@ -114,5 +130,6 @@ namespace UI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnNuevoViaje;
         private System.Windows.Forms.Button btnNuevaMoto;
+        private System.Windows.Forms.Button btnGanancia;
     }
 }

@@ -51,6 +51,12 @@
     <Compile Include="formDetallesEnvio.Designer.cs">
       <DependentUpon>formDetallesEnvio.cs</DependentUpon>
     </Compile>
+    <Compile Include="formGanancia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formGanancia.Designer.cs">
+      <DependentUpon>formGanancia.cs</DependentUpon>
+    </Compile>
     <Compile Include="formMotoqueros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="formDetallesEnvio.resx">
       <DependentUpon>formDetallesEnvio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formGanancia.resx">
+      <DependentUpon>formGanancia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formMotoqueros.resx">
       <DependentUpon>formMotoqueros.cs</DependentUpon>

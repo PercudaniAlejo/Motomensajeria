@@ -97,6 +97,8 @@ namespace CapaNegocio
                         select new {
                             ID = x.idEnvio,
                             Cliente = x.nombreCliente + ", " + x.apellidoCliente.ToUpper(),
+                            Celular = x.numCelCliente,
+                            Fecha = x.fecha,
                             Domicilio = x.domicEntrega,
                             Localidad = x.localidadEntrega,
                             Motoquero = x.eMotoquero.nombre + ", " + x.eMotoquero.apellido.ToUpper(),
@@ -115,6 +117,8 @@ namespace CapaNegocio
                         {
                             ID = x.idEnvio,
                             Cliente = x.nombreCliente + ", " + x.apellidoCliente.ToUpper(),
+                            Celular = x.numCelCliente,
+                            Fecha = x.fecha,
                             Domicilio = x.domicEntrega,
                             Localidad = x.localidadEntrega,
                             Motoquero = x.eMotoquero.nombre + ", " + x.eMotoquero.apellido.ToUpper(),
@@ -129,12 +133,25 @@ namespace CapaNegocio
                                  select new {
                                      ID = x.idEnvio,
                                      Cliente = x.nombreCliente + ", " + x.apellidoCliente.ToUpper(),
+                                     Celular = x.numCelCliente,
+                                     Fecha = x.fecha,
                                      Domicilio = x.domicEntrega,
                                      Localidad = x.localidadEntrega,
                                      Motoquero = x.eMotoquero.nombre + ", " + x.eMotoquero.apellido.ToUpper(),
                                      Precio = "$ " + (int)x.precioFinal
                                  };
             return filasEnviosPorMoto;
+        }
+        public static IQueryable Ganancias() {
+            DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
+            var filasGanancia = from x in dc.eEnvio
+                                 group x by x.fecha into Fecha                             
+                                select new
+                                 {
+                                     Fecha = Fecha.Key,
+                                     Total = Fecha.Sum(x => x.precioFinal)
+                                 };
+            return filasGanancia;
         }
         public void CargaFilaEnvio(eEnvio envio) {
             envio.idEnvio = this.IdEnvio;

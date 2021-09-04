@@ -27,5 +27,11 @@ namespace UI
             formViajes f = new formViajes();
             f.ShowDialog();
         }
+
+        private void btnGanancia_Click(object sender, EventArgs e)
+        {
+            formGanancia f = new formGanancia();
+            f.ShowDialog();
+        }
     }
 }
