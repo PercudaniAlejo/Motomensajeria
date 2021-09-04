@@ -23,7 +23,6 @@ namespace CapaNegocio
         private Boolean fragil;
         private double precioViaje;
         private double precioFinal;
-        private int fkMotoquero;
         private Motoquero motoquero;
         #endregion
 
@@ -39,20 +38,7 @@ namespace CapaNegocio
         public bool Fragil { get => fragil; set => fragil = value; }
         public double PrecioViaje { get => precioViaje; set => precioViaje = value; }
         public double PrecioFinal { get => precioFinal; set => precioFinal = value; }
-
-        [Browsable(false)]
-        public int FkMotoquero { get => fkMotoquero; set => fkMotoquero = value; }
-        public Motoquero Motoquero {
-            get {
-                if (fkMotoquero != 0 && motoquero == null)
-                    motoquero = Motoquero.BuscarPorId(fkMotoquero);
-                return motoquero;
-            }
-            set {
-                motoquero = value;
-                fkMotoquero = value.Id;
-            }
-        }
+        public Motoquero Motoquero { get => motoquero; set => motoquero = value; }
 
 
         #endregion
@@ -61,7 +47,7 @@ namespace CapaNegocio
         public Envio(int idEnvio, DateTime fecha, string nombreCliente,
             string apellidoCliente, int numCelCliente, string domicEntrega,
             string localidadEntrega, int unidades, bool fragil,
-            double precioViaje, double precioFinal, int fkMotoquero)
+            double precioViaje, double precioFinal, Motoquero motoquero)
         {
             this.idEnvio = idEnvio;
             this.fecha = fecha;
@@ -74,7 +60,7 @@ namespace CapaNegocio
             this.fragil = fragil;
             this.precioViaje = precioViaje;
             this.precioFinal = precioFinal;
-            this.fkMotoquero = fkMotoquero;
+            this.motoquero = motoquero;
         }
 
         public Envio() {
@@ -89,14 +75,14 @@ namespace CapaNegocio
             fragil = false;
             precioViaje = 0.0;
             precioFinal = 0.0;
-            fkMotoquero = 0;
+            motoquero = null;
         }
+
         #endregion
 
         #region METHODS
-        public static List<Envio> Buscar(string buscado)
+        public static IQueryable Buscar(string buscado)
         {
-            List<Envio> resultados = new List<Envio>();
             buscado = buscado.ToLower();
 
             DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
@@ -107,53 +93,49 @@ namespace CapaNegocio
                               x.domicEntrega.ToLower().Contains(buscado) ||
                               x.localidadEntrega.ToLower().Contains(buscado) ||
                               x.eMotoquero.nombre.ToLower().Contains(buscado) ||
-                              x.eMotoquero.apellido.ToLower().Contains(buscado) 
-                        select x;
-
-            if (filas != null)
-            {
-                foreach (var f in filas)
-                {
-                    resultados.Add(new Envio(f.idEnvio, f.fecha, f.nombreCliente, f.apellidoCliente,
-                                            f.numCelCliente, f.domicEntrega, f.localidadEntrega,
-                                            f.unidades, f.fragil, f.precioViaje, f.precioFinal, f.FKMotoquero));
-                }
-            }
-
-            return resultados;
+                              x.eMotoquero.apellido.ToLower().Contains(buscado)
+                        select new {
+                            ID = x.idEnvio,
+                            Cliente = x.nombreCliente + ", " + x.apellidoCliente.ToUpper(),
+                            Domicilio = x.domicEntrega,
+                            Localidad = x.localidadEntrega,
+                            Motoquero = x.eMotoquero.nombre + ", " + x.eMotoquero.apellido.ToUpper(),
+                            Precio = "$ " + (int)x.precioFinal
+                        };
+            return filas;
         }
-        public static List<Envio> EnviosHoy() {
+        public static IQueryable EnviosHoy() {
             DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
-            List<Envio> resultados = new List<Envio>();
             DateTime dateNow = DateTime.Today;
             var filasEnviosHoy = from x in dc.eEnvio
                         where x.fecha.Year == dateNow.Year &&
                         x.fecha.Month == dateNow.Month &&
-                        x.fecha.Day == dateNow.Day select x
-                        ;
-            foreach (var f in filasEnviosHoy)
-            {
-                resultados.Add(new Envio(f.idEnvio, f.fecha, f.nombreCliente, f.apellidoCliente,
-                                            f.numCelCliente, f.domicEntrega, f.localidadEntrega,
-                                            f.unidades, f.fragil, f.precioViaje, f.precioFinal, f.FKMotoquero));               
-            }
-            return resultados;
+                        x.fecha.Day == dateNow.Day 
+                        select new
+                        {
+                            ID = x.idEnvio,
+                            Cliente = x.nombreCliente + ", " + x.apellidoCliente.ToUpper(),
+                            Domicilio = x.domicEntrega,
+                            Localidad = x.localidadEntrega,
+                            Motoquero = x.eMotoquero.nombre + ", " + x.eMotoquero.apellido.ToUpper(),
+                            Precio = "$ " + (int)x.precioFinal
+                        }; 
+            return filasEnviosHoy;
         }
-        public static List<Envio> EnviosPorMoto(Motoquero objM) {
+        public static IQueryable EnviosPorMoto(Motoquero objM) {
             DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
-            List<Envio> resultados = new List<Envio>();
             var filasEnviosPorMoto = from x in dc.eEnvio
                                  where x.FKMotoquero == objM.Id
-                                 select x;
-            foreach (var f in filasEnviosPorMoto)
-            {
-                resultados.Add(new Envio(f.idEnvio, f.fecha, f.nombreCliente, f.apellidoCliente,
-                                            f.numCelCliente, f.domicEntrega, f.localidadEntrega,
-                                            f.unidades, f.fragil, f.precioViaje, f.precioFinal, f.FKMotoquero));
-            }
-            return resultados;
+                                 select new {
+                                     ID = x.idEnvio,
+                                     Cliente = x.nombreCliente + ", " + x.apellidoCliente.ToUpper(),
+                                     Domicilio = x.domicEntrega,
+                                     Localidad = x.localidadEntrega,
+                                     Motoquero = x.eMotoquero.nombre + ", " + x.eMotoquero.apellido.ToUpper(),
+                                     Precio = "$ " + (int)x.precioFinal
+                                 };
+            return filasEnviosPorMoto;
         }
-
         public void CargaFilaEnvio(eEnvio envio) {
             envio.idEnvio = this.IdEnvio;
             envio.fecha = this.Fecha;
@@ -167,7 +149,7 @@ namespace CapaNegocio
             //envio.idMotoquero = this.IdMotoquero;
             envio.precioViaje = this.PrecioViaje;
             envio.precioFinal = this.PrecioFinal;
-            envio.FKMotoquero = this.fkMotoquero;
+            envio.FKMotoquero = this.motoquero.Id;
         }
         public void Guardar()
         {
@@ -198,6 +180,16 @@ namespace CapaNegocio
             {
                 throw new Exception("No se pudo eliminar el dato, no fue encontrado el id: " + this.idEnvio);
             }
+        }
+        public static Envio BuscarPorId(int idBuscado)
+        {
+            DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
+            var enc = (from x in dc.eEnvio where x.idEnvio == idBuscado select x).FirstOrDefault();
+            if (enc != null)
+                return new Envio(enc.idEnvio, enc.fecha, enc.nombreCliente, enc.apellidoCliente, enc.numCelCliente,
+                                enc.domicEntrega, enc.localidadEntrega, enc.unidades, enc.fragil, enc.precioViaje, 
+                                enc.precioFinal, Motoquero.BuscarPorId(enc.FKMotoquero));
+            return null;
         }
 
         #endregion

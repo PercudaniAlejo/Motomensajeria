@@ -73,17 +73,30 @@ namespace CapaNegocio
             motoquero.modeloMoto = this.modeloMoto;
         }
 
-        public static List<Motoquero> Buscar(string buscado="")
+        public static IQueryable BuscarIQ(string buscado="")
         {
-            List<Motoquero> resultados = new List<Motoquero>();
             buscado = buscado.ToLower();
-
             DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
             var filas = from x in dc.eMotoquero
                         where x.id.ToString().Contains(buscado) || 
                               x.apellido.ToLower().Contains(buscado) || 
                               x.nombre.ToLower().Contains(buscado) || 
                               x.modeloMoto.ToLower().Contains(buscado)
+                        select new { 
+                            ID = x.id,
+                            Persona = x.nombre + ", " + x.apellido.ToUpper(),
+                            Moto = x.modeloMoto
+                        };
+            return filas;
+        }
+
+        public static List<Motoquero> Buscar(string buscado = "")
+        {
+            buscado = buscado.ToLower();
+            List<Motoquero> resultados = new List<Motoquero>();
+            DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
+            var filas = from x in dc.eMotoquero
+                        where x.nombre.ToLower().Contains(buscado)
                         select x;
 
             if (filas != null)
@@ -93,9 +106,7 @@ namespace CapaNegocio
                     resultados.Add(new Motoquero(f.id, f.nombre, f.apellido, f.numCelular, f.modeloMoto));
                 }
             }
-
             return resultados;
-
         }
 
         public void Eliminar()

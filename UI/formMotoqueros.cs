@@ -70,7 +70,7 @@ namespace UI
             {
                 if (dgvMotoqueros.CurrentRow != null)
                 {
-                    Motoquero m = dgvMotoqueros.CurrentRow.DataBoundItem as Motoquero;
+                    Motoquero m = Motoquero.BuscarPorId((int)dgvMotoqueros.CurrentRow.Cells["ID"].Value);
                     if (MessageBox.Show("Eliminar a: " + m.Nombre + " " + m.Apellido, "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         m.Eliminar();
@@ -97,7 +97,7 @@ namespace UI
             {
                 if (dgvMotoqueros.CurrentRow != null)
                 {
-                    obj = dgvMotoqueros.CurrentRow.DataBoundItem as Motoquero;
+                    obj = Motoquero.BuscarPorId((int)dgvMotoqueros.CurrentRow.Cells["ID"].Value);
                     CargarDatosText();
                     pnlAddMoto.Enabled = true;
                 }
@@ -125,7 +125,7 @@ namespace UI
             txtModeloMoto.Text = "";
         }
         private void Search() {
-            dgvMotoqueros.DataSource = Motoquero.Buscar(txtBuscar.Text);
+            dgvMotoqueros.DataSource = Motoquero.BuscarIQ(txtBuscar.Text);
         }
         private void CargarDatosText() {
             txtNomMoto.Text = obj.Nombre;
@@ -136,8 +136,10 @@ namespace UI
         }
         private Motoquero Selected()
         {
-            if (dgvMotoqueros.CurrentRow != null)
-                return dgvMotoqueros.CurrentRow.DataBoundItem as Motoquero;
+            if (dgvMotoqueros.CurrentRow != null) {
+                Motoquero m = Motoquero.BuscarPorId((int)dgvMotoqueros.CurrentRow.Cells["ID"].Value);
+                return m;
+            }
             return null;
 
             #endregion

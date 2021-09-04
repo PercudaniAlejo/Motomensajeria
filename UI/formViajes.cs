@@ -53,8 +53,6 @@ namespace UI
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
         private void Search()
         {
             dgvEnvios.DataSource = Envio.Buscar(txtBuscar.Text);
@@ -66,7 +64,7 @@ namespace UI
             {
                 if (dgvEnvios.CurrentRow != null)
                 {
-                    Envio envio = dgvEnvios.CurrentRow.DataBoundItem as Envio;
+                    Envio envio = Envio.BuscarPorId((int)dgvEnvios.CurrentRow.Cells["ID"].Value);
                     if (MessageBox.Show("Eliminar el envio con ID: " + envio.IdEnvio.ToString(), "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         envio.Eliminar();
@@ -84,8 +82,10 @@ namespace UI
         }
 
         private Envio Selected() {
-            if (dgvEnvios.CurrentRow != null)
-                return dgvEnvios.CurrentRow.DataBoundItem as Envio;
+            if (dgvEnvios.CurrentRow != null) {
+                objEnvio = Envio.BuscarPorId((int)dgvEnvios.CurrentRow.Cells["ID"].Value);
+                return objEnvio;
+            }
             return null;
         }
 
