@@ -33,6 +33,7 @@ namespace UI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLocalidades));
             this.dgvLocalidades = new System.Windows.Forms.DataGridView();
             this.lblTituloViajes = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
@@ -258,6 +259,7 @@ namespace UI
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblTituloViajes);
             this.Controls.Add(this.dgvLocalidades);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(265, 430);
             this.Name = "formLocalidades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

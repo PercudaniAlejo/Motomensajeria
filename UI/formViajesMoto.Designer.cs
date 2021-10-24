@@ -33,6 +33,7 @@ namespace UI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formViajesMoto));
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dgvViajesMotos = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -121,6 +122,7 @@ namespace UI
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvViajesMotos);
             this.Controls.Add(this.txtBuscar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(765, 410);
             this.Name = "formViajesMoto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -33,6 +33,7 @@ namespace UI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formClientes));
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
@@ -317,6 +318,7 @@ namespace UI
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.dgvClientes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";

@@ -29,6 +29,7 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnNuevoViaje = new System.Windows.Forms.Button();
@@ -117,6 +118,7 @@ namespace UI
             this.Controls.Add(this.btnNuevoViaje);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(250, 415);
             this.MinimumSize = new System.Drawing.Size(250, 415);
             this.Name = "main";

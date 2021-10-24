@@ -29,6 +29,7 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formNuevoViaje));
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.txtDomicilio = new System.Windows.Forms.TextBox();
             this.numUnidades = new System.Windows.Forms.NumericUpDown();
@@ -488,6 +489,7 @@ namespace UI
             this.Controls.Add(this.txtDomicilio);
             this.Controls.Add(this.dtpFecha);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(370, 730);
             this.Name = "formNuevoViaje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
