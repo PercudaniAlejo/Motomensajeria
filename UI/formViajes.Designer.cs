@@ -29,72 +29,22 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvEnvios = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnDetalles = new System.Windows.Forms.Button();
-            this.btnFiltrar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBoxViajesHoy = new System.Windows.Forms.CheckBox();
+            this.dgvEnvios = new System.Windows.Forms.DataGridView();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnvios)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvEnvios
-            // 
-            this.dgvEnvios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvEnvios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvEnvios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvEnvios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
-            this.dgvEnvios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvEnvios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEnvios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvEnvios.ColumnHeadersHeight = 40;
-            this.dgvEnvios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEnvios.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvEnvios.EnableHeadersVisualStyles = false;
-            this.dgvEnvios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(75)))));
-            this.dgvEnvios.Location = new System.Drawing.Point(7, 89);
-            this.dgvEnvios.Name = "dgvEnvios";
-            this.dgvEnvios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEnvios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvEnvios.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvEnvios.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvEnvios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEnvios.Size = new System.Drawing.Size(724, 257);
-            this.dgvEnvios.TabIndex = 0;
             // 
             // txtBuscar
             // 
@@ -121,73 +71,6 @@ namespace UI
             this.btnDetalles.UseVisualStyleBackColor = false;
             this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
             // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(96)))), ((int)(((byte)(114)))));
-            this.btnFiltrar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnFiltrar.FlatAppearance.BorderSize = 0;
-            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft YaHei", 8F);
-            this.btnFiltrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFiltrar.Location = new System.Drawing.Point(236, 53);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(101, 20);
-            this.btnFiltrar.TabIndex = 18;
-            this.btnFiltrar.Text = "Buscar";
-            this.btnFiltrar.UseVisualStyleBackColor = false;
-            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(96)))), ((int)(((byte)(114)))));
-            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
-            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEliminar.Location = new System.Drawing.Point(207, 362);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(94, 29);
-            this.btnEliminar.TabIndex = 43;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(96)))), ((int)(((byte)(114)))));
-            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
-            this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnModificar.Location = new System.Drawing.Point(107, 362);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(94, 29);
-            this.btnModificar.TabIndex = 42;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(96)))), ((int)(((byte)(114)))));
-            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnNuevo.FlatAppearance.BorderSize = 0;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
-            this.btnNuevo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNuevo.Location = new System.Drawing.Point(7, 362);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(94, 29);
-            this.btnNuevo.TabIndex = 41;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -204,16 +87,139 @@ namespace UI
             this.checkBoxViajesHoy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxViajesHoy.AutoSize = true;
             this.checkBoxViajesHoy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.checkBoxViajesHoy.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.checkBoxViajesHoy.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            this.checkBoxViajesHoy.ForeColor = System.Drawing.Color.Black;
-            this.checkBoxViajesHoy.Location = new System.Drawing.Point(595, 48);
+            this.checkBoxViajesHoy.ForeColor = System.Drawing.Color.White;
+            this.checkBoxViajesHoy.Location = new System.Drawing.Point(601, 48);
             this.checkBoxViajesHoy.Name = "checkBoxViajesHoy";
-            this.checkBoxViajesHoy.Size = new System.Drawing.Size(136, 26);
+            this.checkBoxViajesHoy.Size = new System.Drawing.Size(130, 25);
             this.checkBoxViajesHoy.TabIndex = 46;
             this.checkBoxViajesHoy.Text = "Viajes de hoy";
             this.checkBoxViajesHoy.UseVisualStyleBackColor = true;
             this.checkBoxViajesHoy.CheckedChanged += new System.EventHandler(this.checkBoxViajesHoy_CheckedChanged);
+            // 
+            // dgvEnvios
+            // 
+            this.dgvEnvios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEnvios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEnvios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvEnvios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
+            this.dgvEnvios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEnvios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(81)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Tai Le", 9.25F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEnvios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvEnvios.ColumnHeadersHeight = 40;
+            this.dgvEnvios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEnvios.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvEnvios.EnableHeadersVisualStyles = false;
+            this.dgvEnvios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(75)))));
+            this.dgvEnvios.Location = new System.Drawing.Point(-1, 89);
+            this.dgvEnvios.Name = "dgvEnvios";
+            this.dgvEnvios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEnvios.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvEnvios.RowHeadersVisible = false;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvEnvios.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvEnvios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEnvios.Size = new System.Drawing.Size(749, 252);
+            this.dgvEnvios.TabIndex = 57;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackgroundImage = global::UI.Properties.Resources.print;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(534, 355);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(63, 44);
+            this.button3.TabIndex = 58;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::UI.Properties.Resources.delete;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(153, 358);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(52, 33);
+            this.button1.TabIndex = 56;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = global::UI.Properties.Resources.update;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(80, 358);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(52, 33);
+            this.button2.TabIndex = 55;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAgregar.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregar.BackgroundImage = global::UI.Properties.Resources.create;
+            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Location = new System.Drawing.Point(7, 358);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(52, 33);
+            this.btnAgregar.TabIndex = 54;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscar.BackgroundImage = global::UI.Properties.Resources.search;
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Location = new System.Drawing.Point(224, 53);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(20, 20);
+            this.btnBuscar.TabIndex = 53;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // formViajes
             // 
@@ -221,15 +227,16 @@ namespace UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(748, 426);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.dgvEnvios);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.checkBoxViajesHoy);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.btnDetalles);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.dgvEnvios);
             this.ForeColor = System.Drawing.Color.Black;
             this.MinimumSize = new System.Drawing.Size(764, 465);
             this.Name = "formViajes";
@@ -242,15 +249,15 @@ namespace UI
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvEnvios;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnDetalles;
-        private System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBoxViajesHoy;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DataGridView dgvEnvios;
+        private System.Windows.Forms.Button button3;
     }
 }

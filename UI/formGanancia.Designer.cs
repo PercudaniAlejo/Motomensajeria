@@ -35,6 +35,7 @@ namespace UI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvGanancias = new System.Windows.Forms.DataGridView();
             this.lblTituloViajes = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGanancias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +69,7 @@ namespace UI
             this.dgvGanancias.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvGanancias.EnableHeadersVisualStyles = false;
             this.dgvGanancias.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(75)))));
-            this.dgvGanancias.Location = new System.Drawing.Point(12, 59);
+            this.dgvGanancias.Location = new System.Drawing.Point(-3, 59);
             this.dgvGanancias.Name = "dgvGanancias";
             this.dgvGanancias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -86,7 +87,7 @@ namespace UI
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             this.dgvGanancias.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvGanancias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGanancias.Size = new System.Drawing.Size(290, 200);
+            this.dgvGanancias.Size = new System.Drawing.Size(321, 215);
             this.dgvGanancias.TabIndex = 45;
             // 
             // lblTituloViajes
@@ -100,19 +101,34 @@ namespace UI
             this.lblTituloViajes.TabIndex = 46;
             this.lblTituloViajes.Text = "CONTROL DE GANANCIAS";
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::UI.Properties.Resources.print;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(263, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(39, 33);
+            this.button1.TabIndex = 59;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // formGanancia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(314, 271);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTituloViajes);
             this.Controls.Add(this.dgvGanancias);
             this.MaximumSize = new System.Drawing.Size(330, 310);
             this.MinimumSize = new System.Drawing.Size(330, 310);
             this.Name = "formGanancia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "formFinanzas";
+            this.Text = "Finanzas";
             this.Load += new System.EventHandler(this.formFinanzas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGanancias)).EndInit();
             this.ResumeLayout(false);
@@ -124,5 +140,6 @@ namespace UI
 
         private System.Windows.Forms.DataGridView dgvGanancias;
         private System.Windows.Forms.Label lblTituloViajes;
+        private System.Windows.Forms.Button button1;
     }
 }

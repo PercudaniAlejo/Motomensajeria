@@ -35,7 +35,7 @@ namespace UI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dgvViajesMotos = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViajesMotos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,21 +98,19 @@ namespace UI
             this.dgvViajesMotos.Size = new System.Drawing.Size(724, 301);
             this.dgvViajesMotos.TabIndex = 44;
             // 
-            // btnBuscar
+            // button1
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(96)))), ((int)(((byte)(114)))));
-            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft YaHei", 8F);
-            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuscar.Location = new System.Drawing.Point(197, 21);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(101, 20);
-            this.btnBuscar.TabIndex = 47;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::UI.Properties.Resources.search;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(187, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(20, 20);
+            this.button1.TabIndex = 54;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // formViajesMoto
             // 
@@ -120,7 +118,7 @@ namespace UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(749, 371);
-            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvViajesMotos);
             this.Controls.Add(this.txtBuscar);
             this.MinimumSize = new System.Drawing.Size(765, 410);
@@ -137,6 +135,6 @@ namespace UI
         #endregion
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.DataGridView dgvViajesMotos;
-        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button button1;
     }
 }

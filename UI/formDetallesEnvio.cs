@@ -24,7 +24,7 @@ namespace UI
             txtApeCliente.Text = obj.ApellidoCliente;
             txtNomCliente.Text = obj.NombreCliente;
             txtDomicilio.Text = obj.DomicEntrega;
-            txtLocalidad.Text = obj.LocalidadEntrega;
+            //txtLocalidad.Text = obj.LocalidadEntrega;
             dtpFecha.Value = obj.Fecha;
             numCelCliente.Value = (int)obj.NumCelCliente;
             numUnidades.Value = (int)obj.Unidades;

@@ -111,12 +111,14 @@ namespace UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(75)))));
-            this.ClientSize = new System.Drawing.Size(234, 377);
+            this.ClientSize = new System.Drawing.Size(234, 376);
             this.Controls.Add(this.btnGanancia);
             this.Controls.Add(this.btnNuevaMoto);
             this.Controls.Add(this.btnNuevoViaje);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(250, 415);
+            this.MinimumSize = new System.Drawing.Size(250, 415);
             this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ONTIME";

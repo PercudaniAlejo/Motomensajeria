@@ -30,12 +30,18 @@ namespace CapaDatos
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnCreated();
-    partial void InserteEnvio(eEnvio instance);
-    partial void UpdateeEnvio(eEnvio instance);
-    partial void DeleteeEnvio(eEnvio instance);
     partial void InserteMotoquero(eMotoquero instance);
     partial void UpdateeMotoquero(eMotoquero instance);
     partial void DeleteeMotoquero(eMotoquero instance);
+    partial void InserteClienteFijo(eClienteFijo instance);
+    partial void UpdateeClienteFijo(eClienteFijo instance);
+    partial void DeleteeClienteFijo(eClienteFijo instance);
+    partial void InserteEnvio(eEnvio instance);
+    partial void UpdateeEnvio(eEnvio instance);
+    partial void DeleteeEnvio(eEnvio instance);
+    partial void InserteLocalidad(eLocalidad instance);
+    partial void UpdateeLocalidad(eLocalidad instance);
+    partial void DeleteeLocalidad(eLocalidad instance);
     #endregion
 		
 		public DCDataContext() : 
@@ -68,6 +74,22 @@ namespace CapaDatos
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<eMotoquero> eMotoquero
+		{
+			get
+			{
+				return this.GetTable<eMotoquero>();
+			}
+		}
+		
+		public System.Data.Linq.Table<eClienteFijo> eClienteFijo
+		{
+			get
+			{
+				return this.GetTable<eClienteFijo>();
+			}
+		}
+		
 		public System.Data.Linq.Table<eEnvio> eEnvio
 		{
 			get
@@ -76,378 +98,11 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<eMotoquero> eMotoquero
+		public System.Data.Linq.Table<eLocalidad> eLocalidad
 		{
 			get
 			{
-				return this.GetTable<eMotoquero>();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Envio")]
-	public partial class eEnvio : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _idEnvio;
-		
-		private System.DateTime _fecha;
-		
-		private string _nombreCliente;
-		
-		private string _apellidoCliente;
-		
-		private int _numCelCliente;
-		
-		private string _domicEntrega;
-		
-		private string _localidadEntrega;
-		
-		private int _unidades;
-		
-		private bool _fragil;
-		
-		private double _precioViaje;
-		
-		private double _precioFinal;
-		
-		private int _FKMotoquero;
-		
-		private EntityRef<eMotoquero> _eMotoquero;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidEnvioChanging(int value);
-    partial void OnidEnvioChanged();
-    partial void OnfechaChanging(System.DateTime value);
-    partial void OnfechaChanged();
-    partial void OnnombreClienteChanging(string value);
-    partial void OnnombreClienteChanged();
-    partial void OnapellidoClienteChanging(string value);
-    partial void OnapellidoClienteChanged();
-    partial void OnnumCelClienteChanging(int value);
-    partial void OnnumCelClienteChanged();
-    partial void OndomicEntregaChanging(string value);
-    partial void OndomicEntregaChanged();
-    partial void OnlocalidadEntregaChanging(string value);
-    partial void OnlocalidadEntregaChanged();
-    partial void OnunidadesChanging(int value);
-    partial void OnunidadesChanged();
-    partial void OnfragilChanging(bool value);
-    partial void OnfragilChanged();
-    partial void OnprecioViajeChanging(double value);
-    partial void OnprecioViajeChanged();
-    partial void OnprecioFinalChanging(double value);
-    partial void OnprecioFinalChanged();
-    partial void OnFKMotoqueroChanging(int value);
-    partial void OnFKMotoqueroChanged();
-    #endregion
-		
-		public eEnvio()
-		{
-			this._eMotoquero = default(EntityRef<eMotoquero>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idEnvio", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int idEnvio
-		{
-			get
-			{
-				return this._idEnvio;
-			}
-			set
-			{
-				if ((this._idEnvio != value))
-				{
-					this.OnidEnvioChanging(value);
-					this.SendPropertyChanging();
-					this._idEnvio = value;
-					this.SendPropertyChanged("idEnvio");
-					this.OnidEnvioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="DateTime NOT NULL")]
-		public System.DateTime fecha
-		{
-			get
-			{
-				return this._fecha;
-			}
-			set
-			{
-				if ((this._fecha != value))
-				{
-					this.OnfechaChanging(value);
-					this.SendPropertyChanging();
-					this._fecha = value;
-					this.SendPropertyChanged("fecha");
-					this.OnfechaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreCliente", DbType="VarChar(100)")]
-		public string nombreCliente
-		{
-			get
-			{
-				return this._nombreCliente;
-			}
-			set
-			{
-				if ((this._nombreCliente != value))
-				{
-					this.OnnombreClienteChanging(value);
-					this.SendPropertyChanging();
-					this._nombreCliente = value;
-					this.SendPropertyChanged("nombreCliente");
-					this.OnnombreClienteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_apellidoCliente", DbType="VarChar(100)")]
-		public string apellidoCliente
-		{
-			get
-			{
-				return this._apellidoCliente;
-			}
-			set
-			{
-				if ((this._apellidoCliente != value))
-				{
-					this.OnapellidoClienteChanging(value);
-					this.SendPropertyChanging();
-					this._apellidoCliente = value;
-					this.SendPropertyChanged("apellidoCliente");
-					this.OnapellidoClienteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_numCelCliente", DbType="Int NOT NULL")]
-		public int numCelCliente
-		{
-			get
-			{
-				return this._numCelCliente;
-			}
-			set
-			{
-				if ((this._numCelCliente != value))
-				{
-					this.OnnumCelClienteChanging(value);
-					this.SendPropertyChanging();
-					this._numCelCliente = value;
-					this.SendPropertyChanged("numCelCliente");
-					this.OnnumCelClienteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domicEntrega", DbType="VarChar(100)")]
-		public string domicEntrega
-		{
-			get
-			{
-				return this._domicEntrega;
-			}
-			set
-			{
-				if ((this._domicEntrega != value))
-				{
-					this.OndomicEntregaChanging(value);
-					this.SendPropertyChanging();
-					this._domicEntrega = value;
-					this.SendPropertyChanged("domicEntrega");
-					this.OndomicEntregaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_localidadEntrega", DbType="VarChar(50)")]
-		public string localidadEntrega
-		{
-			get
-			{
-				return this._localidadEntrega;
-			}
-			set
-			{
-				if ((this._localidadEntrega != value))
-				{
-					this.OnlocalidadEntregaChanging(value);
-					this.SendPropertyChanging();
-					this._localidadEntrega = value;
-					this.SendPropertyChanged("localidadEntrega");
-					this.OnlocalidadEntregaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_unidades", DbType="Int NOT NULL")]
-		public int unidades
-		{
-			get
-			{
-				return this._unidades;
-			}
-			set
-			{
-				if ((this._unidades != value))
-				{
-					this.OnunidadesChanging(value);
-					this.SendPropertyChanging();
-					this._unidades = value;
-					this.SendPropertyChanged("unidades");
-					this.OnunidadesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fragil", DbType="Bit NOT NULL")]
-		public bool fragil
-		{
-			get
-			{
-				return this._fragil;
-			}
-			set
-			{
-				if ((this._fragil != value))
-				{
-					this.OnfragilChanging(value);
-					this.SendPropertyChanging();
-					this._fragil = value;
-					this.SendPropertyChanged("fragil");
-					this.OnfragilChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precioViaje", DbType="Float NOT NULL")]
-		public double precioViaje
-		{
-			get
-			{
-				return this._precioViaje;
-			}
-			set
-			{
-				if ((this._precioViaje != value))
-				{
-					this.OnprecioViajeChanging(value);
-					this.SendPropertyChanging();
-					this._precioViaje = value;
-					this.SendPropertyChanged("precioViaje");
-					this.OnprecioViajeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precioFinal", DbType="Float NOT NULL")]
-		public double precioFinal
-		{
-			get
-			{
-				return this._precioFinal;
-			}
-			set
-			{
-				if ((this._precioFinal != value))
-				{
-					this.OnprecioFinalChanging(value);
-					this.SendPropertyChanging();
-					this._precioFinal = value;
-					this.SendPropertyChanged("precioFinal");
-					this.OnprecioFinalChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FKMotoquero", DbType="Int NOT NULL")]
-		public int FKMotoquero
-		{
-			get
-			{
-				return this._FKMotoquero;
-			}
-			set
-			{
-				if ((this._FKMotoquero != value))
-				{
-					if (this._eMotoquero.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnFKMotoqueroChanging(value);
-					this.SendPropertyChanging();
-					this._FKMotoquero = value;
-					this.SendPropertyChanged("FKMotoquero");
-					this.OnFKMotoqueroChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Motoquero_Envio", Storage="_eMotoquero", ThisKey="FKMotoquero", OtherKey="id", IsForeignKey=true)]
-		public eMotoquero eMotoquero
-		{
-			get
-			{
-				return this._eMotoquero.Entity;
-			}
-			set
-			{
-				eMotoquero previousValue = this._eMotoquero.Entity;
-				if (((previousValue != value) 
-							|| (this._eMotoquero.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._eMotoquero.Entity = null;
-						previousValue.eEnvio.Remove(this);
-					}
-					this._eMotoquero.Entity = value;
-					if ((value != null))
-					{
-						value.eEnvio.Add(this);
-						this._FKMotoquero = value.id;
-					}
-					else
-					{
-						this._FKMotoquero = default(int);
-					}
-					this.SendPropertyChanged("eMotoquero");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<eLocalidad>();
 			}
 		}
 	}
@@ -635,6 +290,755 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.eMotoquero = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ClienteFijo")]
+	public partial class eClienteFijo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _nombreCliente;
+		
+		private string _apellidoCliente;
+		
+		private int _numCelCliente;
+		
+		private EntitySet<eEnvio> _eEnvio;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnnombreClienteChanging(string value);
+    partial void OnnombreClienteChanged();
+    partial void OnapellidoClienteChanging(string value);
+    partial void OnapellidoClienteChanged();
+    partial void OnnumCelClienteChanging(int value);
+    partial void OnnumCelClienteChanged();
+    #endregion
+		
+		public eClienteFijo()
+		{
+			this._eEnvio = new EntitySet<eEnvio>(new Action<eEnvio>(this.attach_eEnvio), new Action<eEnvio>(this.detach_eEnvio));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreCliente", DbType="VarChar(100)")]
+		public string nombreCliente
+		{
+			get
+			{
+				return this._nombreCliente;
+			}
+			set
+			{
+				if ((this._nombreCliente != value))
+				{
+					this.OnnombreClienteChanging(value);
+					this.SendPropertyChanging();
+					this._nombreCliente = value;
+					this.SendPropertyChanged("nombreCliente");
+					this.OnnombreClienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_apellidoCliente", DbType="VarChar(100)")]
+		public string apellidoCliente
+		{
+			get
+			{
+				return this._apellidoCliente;
+			}
+			set
+			{
+				if ((this._apellidoCliente != value))
+				{
+					this.OnapellidoClienteChanging(value);
+					this.SendPropertyChanging();
+					this._apellidoCliente = value;
+					this.SendPropertyChanged("apellidoCliente");
+					this.OnapellidoClienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_numCelCliente", DbType="Int NOT NULL")]
+		public int numCelCliente
+		{
+			get
+			{
+				return this._numCelCliente;
+			}
+			set
+			{
+				if ((this._numCelCliente != value))
+				{
+					this.OnnumCelClienteChanging(value);
+					this.SendPropertyChanging();
+					this._numCelCliente = value;
+					this.SendPropertyChanged("numCelCliente");
+					this.OnnumCelClienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ClienteFijo_Envio", Storage="_eEnvio", ThisKey="id", OtherKey="idClienteFijo")]
+		public EntitySet<eEnvio> eEnvio
+		{
+			get
+			{
+				return this._eEnvio;
+			}
+			set
+			{
+				this._eEnvio.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_eEnvio(eEnvio entity)
+		{
+			this.SendPropertyChanging();
+			entity.eClienteFijo = this;
+		}
+		
+		private void detach_eEnvio(eEnvio entity)
+		{
+			this.SendPropertyChanging();
+			entity.eClienteFijo = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Envio")]
+	public partial class eEnvio : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idEnvio;
+		
+		private System.DateTime _fecha;
+		
+		private string _nombreCliente;
+		
+		private string _apellidoCliente;
+		
+		private int _numCelCliente;
+		
+		private string _domicEntrega;
+		
+		private int _idLocalidadEntrega;
+		
+		private int _unidades;
+		
+		private bool _fragil;
+		
+		private double _precioViaje;
+		
+		private double _precioFinal;
+		
+		private int _FKMotoquero;
+		
+		private int _idClienteFijo;
+		
+		private EntityRef<eClienteFijo> _eClienteFijo;
+		
+		private EntityRef<eMotoquero> _eMotoquero;
+		
+		private EntityRef<eLocalidad> _eLocalidad;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidEnvioChanging(int value);
+    partial void OnidEnvioChanged();
+    partial void OnfechaChanging(System.DateTime value);
+    partial void OnfechaChanged();
+    partial void OnnombreClienteChanging(string value);
+    partial void OnnombreClienteChanged();
+    partial void OnapellidoClienteChanging(string value);
+    partial void OnapellidoClienteChanged();
+    partial void OnnumCelClienteChanging(int value);
+    partial void OnnumCelClienteChanged();
+    partial void OndomicEntregaChanging(string value);
+    partial void OndomicEntregaChanged();
+    partial void OnidLocalidadEntregaChanging(int value);
+    partial void OnidLocalidadEntregaChanged();
+    partial void OnunidadesChanging(int value);
+    partial void OnunidadesChanged();
+    partial void OnfragilChanging(bool value);
+    partial void OnfragilChanged();
+    partial void OnprecioViajeChanging(double value);
+    partial void OnprecioViajeChanged();
+    partial void OnprecioFinalChanging(double value);
+    partial void OnprecioFinalChanged();
+    partial void OnFKMotoqueroChanging(int value);
+    partial void OnFKMotoqueroChanged();
+    partial void OnidClienteFijoChanging(int value);
+    partial void OnidClienteFijoChanged();
+    #endregion
+		
+		public eEnvio()
+		{
+			this._eClienteFijo = default(EntityRef<eClienteFijo>);
+			this._eMotoquero = default(EntityRef<eMotoquero>);
+			this._eLocalidad = default(EntityRef<eLocalidad>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idEnvio", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int idEnvio
+		{
+			get
+			{
+				return this._idEnvio;
+			}
+			set
+			{
+				if ((this._idEnvio != value))
+				{
+					this.OnidEnvioChanging(value);
+					this.SendPropertyChanging();
+					this._idEnvio = value;
+					this.SendPropertyChanged("idEnvio");
+					this.OnidEnvioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime fecha
+		{
+			get
+			{
+				return this._fecha;
+			}
+			set
+			{
+				if ((this._fecha != value))
+				{
+					this.OnfechaChanging(value);
+					this.SendPropertyChanging();
+					this._fecha = value;
+					this.SendPropertyChanged("fecha");
+					this.OnfechaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreCliente", DbType="VarChar(100)")]
+		public string nombreCliente
+		{
+			get
+			{
+				return this._nombreCliente;
+			}
+			set
+			{
+				if ((this._nombreCliente != value))
+				{
+					this.OnnombreClienteChanging(value);
+					this.SendPropertyChanging();
+					this._nombreCliente = value;
+					this.SendPropertyChanged("nombreCliente");
+					this.OnnombreClienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_apellidoCliente", DbType="VarChar(100)")]
+		public string apellidoCliente
+		{
+			get
+			{
+				return this._apellidoCliente;
+			}
+			set
+			{
+				if ((this._apellidoCliente != value))
+				{
+					this.OnapellidoClienteChanging(value);
+					this.SendPropertyChanging();
+					this._apellidoCliente = value;
+					this.SendPropertyChanged("apellidoCliente");
+					this.OnapellidoClienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_numCelCliente", DbType="Int NOT NULL")]
+		public int numCelCliente
+		{
+			get
+			{
+				return this._numCelCliente;
+			}
+			set
+			{
+				if ((this._numCelCliente != value))
+				{
+					this.OnnumCelClienteChanging(value);
+					this.SendPropertyChanging();
+					this._numCelCliente = value;
+					this.SendPropertyChanged("numCelCliente");
+					this.OnnumCelClienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domicEntrega", DbType="VarChar(50)")]
+		public string domicEntrega
+		{
+			get
+			{
+				return this._domicEntrega;
+			}
+			set
+			{
+				if ((this._domicEntrega != value))
+				{
+					this.OndomicEntregaChanging(value);
+					this.SendPropertyChanging();
+					this._domicEntrega = value;
+					this.SendPropertyChanged("domicEntrega");
+					this.OndomicEntregaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idLocalidadEntrega", DbType="Int NOT NULL")]
+		public int idLocalidadEntrega
+		{
+			get
+			{
+				return this._idLocalidadEntrega;
+			}
+			set
+			{
+				if ((this._idLocalidadEntrega != value))
+				{
+					if (this._eLocalidad.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidLocalidadEntregaChanging(value);
+					this.SendPropertyChanging();
+					this._idLocalidadEntrega = value;
+					this.SendPropertyChanged("idLocalidadEntrega");
+					this.OnidLocalidadEntregaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_unidades", DbType="Int NOT NULL")]
+		public int unidades
+		{
+			get
+			{
+				return this._unidades;
+			}
+			set
+			{
+				if ((this._unidades != value))
+				{
+					this.OnunidadesChanging(value);
+					this.SendPropertyChanging();
+					this._unidades = value;
+					this.SendPropertyChanged("unidades");
+					this.OnunidadesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fragil", DbType="Bit NOT NULL")]
+		public bool fragil
+		{
+			get
+			{
+				return this._fragil;
+			}
+			set
+			{
+				if ((this._fragil != value))
+				{
+					this.OnfragilChanging(value);
+					this.SendPropertyChanging();
+					this._fragil = value;
+					this.SendPropertyChanged("fragil");
+					this.OnfragilChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precioViaje", DbType="Float NOT NULL")]
+		public double precioViaje
+		{
+			get
+			{
+				return this._precioViaje;
+			}
+			set
+			{
+				if ((this._precioViaje != value))
+				{
+					this.OnprecioViajeChanging(value);
+					this.SendPropertyChanging();
+					this._precioViaje = value;
+					this.SendPropertyChanged("precioViaje");
+					this.OnprecioViajeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precioFinal", DbType="Float NOT NULL")]
+		public double precioFinal
+		{
+			get
+			{
+				return this._precioFinal;
+			}
+			set
+			{
+				if ((this._precioFinal != value))
+				{
+					this.OnprecioFinalChanging(value);
+					this.SendPropertyChanging();
+					this._precioFinal = value;
+					this.SendPropertyChanged("precioFinal");
+					this.OnprecioFinalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FKMotoquero", DbType="Int NOT NULL")]
+		public int FKMotoquero
+		{
+			get
+			{
+				return this._FKMotoquero;
+			}
+			set
+			{
+				if ((this._FKMotoquero != value))
+				{
+					if (this._eMotoquero.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnFKMotoqueroChanging(value);
+					this.SendPropertyChanging();
+					this._FKMotoquero = value;
+					this.SendPropertyChanged("FKMotoquero");
+					this.OnFKMotoqueroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idClienteFijo", DbType="Int NOT NULL")]
+		public int idClienteFijo
+		{
+			get
+			{
+				return this._idClienteFijo;
+			}
+			set
+			{
+				if ((this._idClienteFijo != value))
+				{
+					if (this._eClienteFijo.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidClienteFijoChanging(value);
+					this.SendPropertyChanging();
+					this._idClienteFijo = value;
+					this.SendPropertyChanged("idClienteFijo");
+					this.OnidClienteFijoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ClienteFijo_Envio", Storage="_eClienteFijo", ThisKey="idClienteFijo", OtherKey="id", IsForeignKey=true)]
+		public eClienteFijo eClienteFijo
+		{
+			get
+			{
+				return this._eClienteFijo.Entity;
+			}
+			set
+			{
+				eClienteFijo previousValue = this._eClienteFijo.Entity;
+				if (((previousValue != value) 
+							|| (this._eClienteFijo.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._eClienteFijo.Entity = null;
+						previousValue.eEnvio.Remove(this);
+					}
+					this._eClienteFijo.Entity = value;
+					if ((value != null))
+					{
+						value.eEnvio.Add(this);
+						this._idClienteFijo = value.id;
+					}
+					else
+					{
+						this._idClienteFijo = default(int);
+					}
+					this.SendPropertyChanged("eClienteFijo");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Motoquero_Envio", Storage="_eMotoquero", ThisKey="FKMotoquero", OtherKey="id", IsForeignKey=true)]
+		public eMotoquero eMotoquero
+		{
+			get
+			{
+				return this._eMotoquero.Entity;
+			}
+			set
+			{
+				eMotoquero previousValue = this._eMotoquero.Entity;
+				if (((previousValue != value) 
+							|| (this._eMotoquero.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._eMotoquero.Entity = null;
+						previousValue.eEnvio.Remove(this);
+					}
+					this._eMotoquero.Entity = value;
+					if ((value != null))
+					{
+						value.eEnvio.Add(this);
+						this._FKMotoquero = value.id;
+					}
+					else
+					{
+						this._FKMotoquero = default(int);
+					}
+					this.SendPropertyChanged("eMotoquero");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Localidad_Envio", Storage="_eLocalidad", ThisKey="idLocalidadEntrega", OtherKey="id", IsForeignKey=true)]
+		public eLocalidad eLocalidad
+		{
+			get
+			{
+				return this._eLocalidad.Entity;
+			}
+			set
+			{
+				eLocalidad previousValue = this._eLocalidad.Entity;
+				if (((previousValue != value) 
+							|| (this._eLocalidad.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._eLocalidad.Entity = null;
+						previousValue.eEnvio.Remove(this);
+					}
+					this._eLocalidad.Entity = value;
+					if ((value != null))
+					{
+						value.eEnvio.Add(this);
+						this._idLocalidadEntrega = value.id;
+					}
+					else
+					{
+						this._idLocalidadEntrega = default(int);
+					}
+					this.SendPropertyChanged("eLocalidad");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Localidad")]
+	public partial class eLocalidad : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _nombre;
+		
+		private EntitySet<eEnvio> _eEnvio;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnnombreChanging(string value);
+    partial void OnnombreChanged();
+    #endregion
+		
+		public eLocalidad()
+		{
+			this._eEnvio = new EntitySet<eEnvio>(new Action<eEnvio>(this.attach_eEnvio), new Action<eEnvio>(this.detach_eEnvio));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre", DbType="VarChar(100)")]
+		public string nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				if ((this._nombre != value))
+				{
+					this.OnnombreChanging(value);
+					this.SendPropertyChanging();
+					this._nombre = value;
+					this.SendPropertyChanged("nombre");
+					this.OnnombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Localidad_Envio", Storage="_eEnvio", ThisKey="id", OtherKey="idLocalidadEntrega")]
+		public EntitySet<eEnvio> eEnvio
+		{
+			get
+			{
+				return this._eEnvio;
+			}
+			set
+			{
+				this._eEnvio.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_eEnvio(eEnvio entity)
+		{
+			this.SendPropertyChanging();
+			entity.eLocalidad = this;
+		}
+		
+		private void detach_eEnvio(eEnvio entity)
+		{
+			this.SendPropertyChanging();
+			entity.eLocalidad = null;
 		}
 	}
 }

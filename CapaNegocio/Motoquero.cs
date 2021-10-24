@@ -78,13 +78,14 @@ namespace CapaNegocio
             buscado = buscado.ToLower();
             DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
             var filas = from x in dc.eMotoquero
-                        where x.id.ToString().Contains(buscado) || 
-                              x.apellido.ToLower().Contains(buscado) || 
-                              x.nombre.ToLower().Contains(buscado) || 
+                        where x.id.ToString().Contains(buscado) ||
+                              x.apellido.ToLower().Contains(buscado) ||
+                              x.nombre.ToLower().Contains(buscado) ||
                               x.modeloMoto.ToLower().Contains(buscado)
-                        select new { 
+                        select new {
                             ID = x.id,
-                            Persona = x.nombre + ", " + x.apellido.ToUpper(),
+                            Nombre = x.nombre + ", " + x.apellido.ToUpper(),
+                            Celular = x.numCelular,
                             Moto = x.modeloMoto
                         };
             return filas;
@@ -96,7 +97,8 @@ namespace CapaNegocio
             List<Motoquero> resultados = new List<Motoquero>();
             DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
             var filas = from x in dc.eMotoquero
-                        where x.nombre.ToLower().Contains(buscado)
+                        where x.nombre.ToLower().Contains(buscado) ||
+                        x.apellido.ToLower().Contains(buscado)
                         select x;
 
             if (filas != null)

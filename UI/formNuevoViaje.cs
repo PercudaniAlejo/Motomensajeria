@@ -12,21 +12,23 @@ namespace UI
 {
     public partial class formNuevoViaje : Form
     {
-        private Envio obj; 
+        private Envio obj;
+        bool nuevoCliente = true;
         public formNuevoViaje(Envio objEnvio = null)
         {
             InitializeComponent();
             obj = objEnvio;
-            CargarCMB();
         }
         private void formNuevoViaje_Load(object sender, EventArgs e)
         {
+            CargarCMB();
             if (obj != null)
                 CargarDatosModificar(obj);
             else
             { 
                 Clear();
                 obj = new Envio();
+                CargarTXTCliente();
             }
         }
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -37,13 +39,53 @@ namespace UI
             this.Close();
             Clear();
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Clear();
             this.Close();
         }
-     
+        private void btnLocalidad_Click(object sender, EventArgs e)
+        {
+            formLocalidades f = new formLocalidades();
+            f.ShowDialog();
+            CargarCMB();
+        }
+        private void btnNuevoCliente_Click(object sender, EventArgs e)
+        {
+            formClientes f = new formClientes();
+            f.ShowDialog();
+            CargarCMB();
+        }
+        private void btnAgregarMoto_Click(object sender, EventArgs e)
+        {
+            formMotoqueros f = new formMotoqueros();
+            f.ShowDialog();
+            CargarCMB();
+        }
+        private void chkNuevoCliente_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkNuevoCliente.Checked)
+            {
+                pnlCliente.Enabled = false;
+                pnlNuevoCliente.Enabled = true;
+                nuevoCliente = true;
+                txtNomCliente.Text = "";
+                txtApeCliente.Text = "";
+                numCelCliente.Value = 0;
+            }
+            else {
+                pnlCliente.Enabled = true;
+                pnlNuevoCliente.Enabled = false;
+                nuevoCliente = false;
+                CargarTXTCliente();
+            }
+        }
+        private void cmbClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(!nuevoCliente)
+                CargarTXTCliente();
+        }
+
         #region METHODS
         private void SetDatos()
         {
@@ -52,7 +94,11 @@ namespace UI
             obj.NumCelCliente = (int)numCelCliente.Value;
             obj.Fecha = dtpFecha.Value;
             obj.DomicEntrega = txtDomicilio.Text;
-            obj.LocalidadEntrega = txtLocalidad.Text;
+            if (nuevoCliente)
+                obj.Cliente = Cliente.BuscarPorId(-1);
+            else
+                obj.Cliente = cmbClientes.SelectedItem as Cliente;
+            obj.LocalidadEntrega = cmbLocalidades.SelectedItem as Localidad;
             obj.Unidades = (int)numUnidades.Value;
             obj.Fragil = checkFragil.Checked;
             obj.PrecioViaje = (int)numPrecioViaje.Value;
@@ -66,7 +112,6 @@ namespace UI
             txtApeCliente.Text = "";
             numCelCliente.Value = 0;
             txtDomicilio.Text = "";
-            txtLocalidad.Text = "";
             numUnidades.Value = 0;
             checkFragil.Checked = false;
             numPrecioViaje.Value = 0;
@@ -77,7 +122,8 @@ namespace UI
             txtApeCliente.Text = obj.ApellidoCliente;
             txtNomCliente.Text = obj.NombreCliente;
             txtDomicilio.Text = obj.DomicEntrega;
-            txtLocalidad.Text = obj.LocalidadEntrega;
+            if (obj.LocalidadEntrega != null)
+                cmbLocalidades.Text = obj.LocalidadEntrega.ToString();
             dtpFecha.Value = obj.Fecha;
             numCelCliente.Value = (int)obj.NumCelCliente;
             numUnidades.Value = (int)obj.Unidades;
@@ -89,8 +135,19 @@ namespace UI
         }
         private void CargarCMB() {
             cmbMotoquero.DataSource = null;
-            cmbMotoquero.DataSource = Motoquero.Buscar();
+            cmbMotoquero.DataSource = Motoquero.Buscar("");
+            cmbLocalidades.DataSource = null;
+            cmbLocalidades.DataSource = Localidad.Buscar("");
+            cmbClientes.DataSource = Cliente.Buscar("");
+        }
+        private void CargarTXTCliente()
+        {
+            Cliente c = cmbClientes.SelectedItem as Cliente;
+            txtNomCliente.Text = c.Nombre;
+            txtApeCliente.Text = c.Apellido;
+            numCelCliente.Value = c.Celular;
         }
         #endregion
+
     }
 }

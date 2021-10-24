@@ -12,13 +12,12 @@ namespace CapaNegocio
         #region VM
         private int idEnvio;
         private DateTime fecha;
-
+        private Cliente cliente;
         private string nombreCliente;
         private string apellidoCliente;
         private int numCelCliente;
-
         private string domicEntrega;
-        private string localidadEntrega;
+        private Localidad localidadEntrega;
         private int unidades;
         private Boolean fragil;
         private double precioViaje;
@@ -33,12 +32,13 @@ namespace CapaNegocio
         public string ApellidoCliente { get => apellidoCliente; set => apellidoCliente = value; }
         public int NumCelCliente { get => numCelCliente; set => numCelCliente = value; }
         public string DomicEntrega { get => domicEntrega; set => domicEntrega = value; }
-        public string LocalidadEntrega { get => localidadEntrega; set => localidadEntrega = value; }
+        public Localidad LocalidadEntrega { get => localidadEntrega; set => localidadEntrega = value; }
         public int Unidades { get => unidades; set => unidades = value; }
         public bool Fragil { get => fragil; set => fragil = value; }
         public double PrecioViaje { get => precioViaje; set => precioViaje = value; }
         public double PrecioFinal { get => precioFinal; set => precioFinal = value; }
         public Motoquero Motoquero { get => motoquero; set => motoquero = value; }
+        public Cliente Cliente { get => cliente; set => cliente = value; }
 
 
         #endregion
@@ -46,8 +46,8 @@ namespace CapaNegocio
         #region BUILDERS
         public Envio(int idEnvio, DateTime fecha, string nombreCliente,
             string apellidoCliente, int numCelCliente, string domicEntrega,
-            string localidadEntrega, int unidades, bool fragil,
-            double precioViaje, double precioFinal, Motoquero motoquero)
+            Localidad localidadEntrega, int unidades, bool fragil,
+            double precioViaje, double precioFinal, Motoquero motoquero, Cliente cliente)
         {
             this.idEnvio = idEnvio;
             this.fecha = fecha;
@@ -61,6 +61,7 @@ namespace CapaNegocio
             this.precioViaje = precioViaje;
             this.precioFinal = precioFinal;
             this.motoquero = motoquero;
+            this.cliente = cliente;
         }
 
         public Envio() {
@@ -70,14 +71,14 @@ namespace CapaNegocio
             apellidoCliente = "";
             numCelCliente = 0;
             domicEntrega = "";
-            localidadEntrega = "";
+            localidadEntrega = null;
             unidades = 1;
             fragil = false;
             precioViaje = 0.0;
             precioFinal = 0.0;
             motoquero = null;
+            cliente = null;
         }
-
         #endregion
 
         #region METHODS
@@ -91,16 +92,18 @@ namespace CapaNegocio
                               x.nombreCliente.ToLower().Contains(buscado) ||
                               x.apellidoCliente.ToLower().Contains(buscado) ||
                               x.domicEntrega.ToLower().Contains(buscado) ||
-                              x.localidadEntrega.ToLower().Contains(buscado) ||
+                              x.eLocalidad.nombre.ToLower().Contains(buscado) ||
                               x.eMotoquero.nombre.ToLower().Contains(buscado) ||
-                              x.eMotoquero.apellido.ToLower().Contains(buscado)
+                              x.eMotoquero.apellido.ToLower().Contains(buscado) ||
+                              x.eClienteFijo.nombreCliente.ToLower().Contains(buscado) ||
+                              x.eClienteFijo.apellidoCliente.ToLower().Contains(buscado)
                         select new {
                             ID = x.idEnvio,
                             Cliente = x.nombreCliente + ", " + x.apellidoCliente.ToUpper(),
                             Celular = x.numCelCliente,
                             Fecha = x.fecha,
                             Domicilio = x.domicEntrega,
-                            Localidad = x.localidadEntrega,
+                            Localidad = x.eLocalidad.nombre,
                             Motoquero = x.eMotoquero.nombre + ", " + x.eMotoquero.apellido.ToUpper(),
                             Precio = "$ " + (int)x.precioFinal
                         };
@@ -120,7 +123,7 @@ namespace CapaNegocio
                             Celular = x.numCelCliente,
                             Fecha = x.fecha,
                             Domicilio = x.domicEntrega,
-                            Localidad = x.localidadEntrega,
+                            Localidad = x.eLocalidad.nombre,
                             Motoquero = x.eMotoquero.nombre + ", " + x.eMotoquero.apellido.ToUpper(),
                             Precio = "$ " + (int)x.precioFinal
                         }; 
@@ -136,7 +139,7 @@ namespace CapaNegocio
                                      Celular = x.numCelCliente,
                                      Fecha = x.fecha,
                                      Domicilio = x.domicEntrega,
-                                     Localidad = x.localidadEntrega,
+                                     Localidad = x.eLocalidad.nombre,
                                      Motoquero = x.eMotoquero.nombre + ", " + x.eMotoquero.apellido.ToUpper(),
                                      Precio = "$ " + (int)x.precioFinal
                                  };
@@ -160,10 +163,10 @@ namespace CapaNegocio
             envio.apellidoCliente = this.ApellidoCliente;
             envio.numCelCliente = this.NumCelCliente;
             envio.domicEntrega = this.DomicEntrega;
-            envio.localidadEntrega = this.LocalidadEntrega;
+            envio.idLocalidadEntrega = this.localidadEntrega.Id;
+            envio.idClienteFijo = this.cliente.Id;
             envio.unidades = this.Unidades;
             envio.fragil = this.Fragil;
-            //envio.idMotoquero = this.IdMotoquero;
             envio.precioViaje = this.PrecioViaje;
             envio.precioFinal = this.PrecioFinal;
             envio.FKMotoquero = this.motoquero.Id;
@@ -204,8 +207,8 @@ namespace CapaNegocio
             var enc = (from x in dc.eEnvio where x.idEnvio == idBuscado select x).FirstOrDefault();
             if (enc != null)
                 return new Envio(enc.idEnvio, enc.fecha, enc.nombreCliente, enc.apellidoCliente, enc.numCelCliente,
-                                enc.domicEntrega, enc.localidadEntrega, enc.unidades, enc.fragil, enc.precioViaje, 
-                                enc.precioFinal, Motoquero.BuscarPorId(enc.FKMotoquero));
+                                enc.domicEntrega, Localidad.BuscarPorId(enc.idLocalidadEntrega), enc.unidades, enc.fragil, enc.precioViaje, 
+                                enc.precioFinal, Motoquero.BuscarPorId(enc.FKMotoquero), Cliente.BuscarPorId(enc.idClienteFijo));
             return null;
         }
 

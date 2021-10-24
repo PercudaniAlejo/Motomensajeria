@@ -137,7 +137,7 @@ namespace UI
             this.checkFragil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.checkFragil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkFragil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.checkFragil.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.checkFragil.ForeColor = System.Drawing.SystemColors.Control;
             this.checkFragil.Location = new System.Drawing.Point(8, 310);
             this.checkFragil.Name = "checkFragil";
             this.checkFragil.Size = new System.Drawing.Size(59, 21);

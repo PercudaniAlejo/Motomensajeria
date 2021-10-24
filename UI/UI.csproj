@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="formClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formClientes.Designer.cs">
+      <DependentUpon>formClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="formDetallesEnvio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +62,12 @@
     </Compile>
     <Compile Include="formGanancia.Designer.cs">
       <DependentUpon>formGanancia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formLocalidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formLocalidades.Designer.cs">
+      <DependentUpon>formLocalidades.cs</DependentUpon>
     </Compile>
     <Compile Include="formMotoqueros.cs">
       <SubType>Form</SubType>
@@ -89,11 +101,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formClientes.resx">
+      <DependentUpon>formClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formDetallesEnvio.resx">
       <DependentUpon>formDetallesEnvio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formGanancia.resx">
       <DependentUpon>formGanancia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formLocalidades.resx">
+      <DependentUpon>formLocalidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formMotoqueros.resx">
       <DependentUpon>formMotoqueros.cs</DependentUpon>
@@ -118,6 +136,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -138,6 +157,24 @@
       <Project>{4e268966-6fb7-4c1e-b9eb-7b3cf0dab83a}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\create.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
