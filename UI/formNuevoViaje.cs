@@ -33,11 +33,23 @@ namespace UI
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            SetDatos();
-            obj.Guardar();
-            MessageBox.Show("Viaje registrado correctamente correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
-            Clear();
+            try
+            {
+                if (txtNomCliente.Text != "" && txtApeCliente.Text != "" &&
+                    numCelCliente.Value!= 0 && txtDomicilio.Text != "" &&
+                    numUnidades.Value != 0 && numPrecioFinal.Value != 0)
+                {
+                    SetDatos();
+                    obj.Guardar();
+                    MessageBox.Show("Viaje registrado correctamente correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                    Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {

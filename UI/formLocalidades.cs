@@ -66,7 +66,7 @@ namespace UI
             }
             else
             {
-                MessageBox.Show("Campos incompletas", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Campos incompletos", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnModificar_Click(object sender, EventArgs e)

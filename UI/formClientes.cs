@@ -39,12 +39,27 @@ namespace UI
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            SetDatos();
-            obj.Guardar();
-            MessageBox.Show("Guardado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            pnlDatos.Enabled = false;
-            Clear();
-            Buscar();
+            try
+            {
+                if (txtNombre.Text != "" && txtApellido.Text != "" && numCelular.Value != 0)
+                {
+                    SetDatos();
+                    obj.Guardar();
+                    MessageBox.Show("Guardado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    pnlDatos.Enabled = false;
+                    Clear();
+                    Buscar();
+                }
+                else
+                {
+                    MessageBox.Show("Complete los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+            }
+            catch (Exception ex){ 
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {

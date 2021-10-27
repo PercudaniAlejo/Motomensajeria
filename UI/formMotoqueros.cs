@@ -16,13 +16,27 @@ namespace UI
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            SetDatos();
-            obj.Guardar();
-            MessageBox.Show("Guardado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            pnlAddMoto.Enabled = false;
-            Clear();
-            Search();
+            try
+            {
+                if (txtNomMoto.Text != "" && txtApeMoto.Text != "" &&
+                    numCelMoto.Value != 0 && txtModeloMoto.Text != "")
+                {
+                    SetDatos();
+                    obj.Guardar();
+                    MessageBox.Show("Guardado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    pnlAddMoto.Enabled = false;
+                    Clear();
+                    Search();
+                }
+                else
+                {
+                    MessageBox.Show("Campos incompletos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {

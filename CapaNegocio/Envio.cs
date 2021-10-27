@@ -91,6 +91,7 @@ namespace CapaNegocio
                         where x.idEnvio.ToString().Contains(buscado) ||
                               x.nombreCliente.ToLower().Contains(buscado) ||
                               x.apellidoCliente.ToLower().Contains(buscado) ||
+                              x.fecha.ToString().Contains(buscado) ||
                               x.domicEntrega.ToLower().Contains(buscado) ||
                               x.eLocalidad.nombre.ToLower().Contains(buscado) ||
                               x.eMotoquero.nombre.ToLower().Contains(buscado) ||
