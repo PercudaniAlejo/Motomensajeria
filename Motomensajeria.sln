@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocio", "CapaNegocio\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "CapaDatos\CapaDatos.csproj", "{31870AA5-76F8-4FA4-8BA3-2E9F638BFB15}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "setup-ontime", "setup-ontime\setup-ontime.vdproj", "{B666CD63-C271-4C11-8E72-65108AEFBD2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,8 @@ Global
 		{31870AA5-76F8-4FA4-8BA3-2E9F638BFB15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31870AA5-76F8-4FA4-8BA3-2E9F638BFB15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31870AA5-76F8-4FA4-8BA3-2E9F638BFB15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B666CD63-C271-4C11-8E72-65108AEFBD2C}.Debug|Any CPU.ActiveCfg = Debug
+		{B666CD63-C271-4C11-8E72-65108AEFBD2C}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

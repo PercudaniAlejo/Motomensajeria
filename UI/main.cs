@@ -33,5 +33,9 @@ namespace UI
             formGanancia f = new formGanancia();
             f.ShowDialog();
         }
+
+        private void main_Load(object sender, EventArgs e)
+        {
+        }
     }
 }
