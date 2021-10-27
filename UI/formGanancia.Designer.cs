@@ -36,7 +36,7 @@ namespace UI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formGanancia));
             this.dgvGanancias = new System.Windows.Forms.DataGridView();
             this.lblTituloViajes = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnVisorGanancias = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGanancias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,27 +102,28 @@ namespace UI
             this.lblTituloViajes.TabIndex = 46;
             this.lblTituloViajes.Text = "CONTROL DE GANANCIAS";
             // 
-            // button1
+            // btnVisorGanancias
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::UI.Properties.Resources.print;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(263, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(39, 33);
-            this.button1.TabIndex = 59;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnVisorGanancias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnVisorGanancias.BackColor = System.Drawing.Color.Transparent;
+            this.btnVisorGanancias.BackgroundImage = global::UI.Properties.Resources.print;
+            this.btnVisorGanancias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVisorGanancias.FlatAppearance.BorderSize = 0;
+            this.btnVisorGanancias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVisorGanancias.Location = new System.Drawing.Point(263, 16);
+            this.btnVisorGanancias.Name = "btnVisorGanancias";
+            this.btnVisorGanancias.Size = new System.Drawing.Size(39, 33);
+            this.btnVisorGanancias.TabIndex = 59;
+            this.btnVisorGanancias.UseVisualStyleBackColor = false;
+            this.btnVisorGanancias.Click += new System.EventHandler(this.btnVisorGanancias_Click);
             // 
             // formGanancia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(75)))));
-            this.ClientSize = new System.Drawing.Size(314, 271);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(314, 272);
+            this.Controls.Add(this.btnVisorGanancias);
             this.Controls.Add(this.lblTituloViajes);
             this.Controls.Add(this.dgvGanancias);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -142,6 +143,6 @@ namespace UI
 
         private System.Windows.Forms.DataGridView dgvGanancias;
         private System.Windows.Forms.Label lblTituloViajes;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVisorGanancias;
     }
 }

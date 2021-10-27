@@ -22,5 +22,11 @@ namespace UI
             dgvGanancias.DataSource = null;
             dgvGanancias.DataSource = Envio.Ganancias();
         }
+
+        private void btnVisorGanancias_Click(object sender, EventArgs e)
+        {
+            formVisorGanancias f = new formVisorGanancias();
+            f.ShowDialog();
+        }
     }
 }

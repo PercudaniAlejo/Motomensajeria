@@ -39,5 +39,12 @@ namespace UI
             dgvViajesMotos.DataSource = Envio.EnviosPorMoto(obj);
         }
 
+        private void checkBoxViajesHoy_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxViajesHoy.Checked)
+                dgvViajesMotos.DataSource = Envio.EnviosHoyPorMoto(obj);
+            else
+                dgvViajesMotos.DataSource = Envio.EnviosPorMoto(obj);
+        }
     }
 }

@@ -141,10 +141,13 @@ namespace UI
                 return m;
             }
             return null;
+        }
+        #endregion
 
-            #endregion
-
+        private void btnInforme_Click(object sender, EventArgs e)
+        {
+            FormConFiltro f = new FormConFiltro();
+            f.ShowDialog();
         }
     }
-
 }

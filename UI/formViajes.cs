@@ -40,7 +40,6 @@ namespace UI
                 dgvEnvios.DataSource = Envio.EnviosHoy();
             else
                 dgvEnvios.DataSource = Envio.Buscar(txtBuscar.Text);
-
         }
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
@@ -96,5 +95,10 @@ namespace UI
             d.ShowDialog();
         }
 
+        private void btnReportViajes_Click(object sender, EventArgs e)
+        {
+            formVisorViajesHoy f = new formVisorViajesHoy();
+            f.ShowDialog();
+        }
     }
 }

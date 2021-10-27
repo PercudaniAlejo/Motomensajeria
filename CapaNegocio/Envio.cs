@@ -145,6 +145,29 @@ namespace CapaNegocio
                                  };
             return filasEnviosPorMoto;
         }
+
+        public static IQueryable EnviosHoyPorMoto(Motoquero objM)
+        {
+            DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
+            DateTime dateNow = DateTime.Today;
+            var filasEnviosHoy = from x in dc.eEnvio
+                                 where x.fecha.Year == dateNow.Year &&
+                                 x.fecha.Month == dateNow.Month &&
+                                 x.fecha.Day == dateNow.Day && 
+                                 x.FKMotoquero == objM.Id
+                                 select new
+                                 {
+                                     ID = x.idEnvio,
+                                     Cliente = x.nombreCliente + ", " + x.apellidoCliente.ToUpper(),
+                                     Celular = x.numCelCliente,
+                                     Fecha = x.fecha,
+                                     Domicilio = x.domicEntrega,
+                                     Localidad = x.eLocalidad.nombre,
+                                     Motoquero = x.eMotoquero.nombre + ", " + x.eMotoquero.apellido.ToUpper(),
+                                     Precio = "$ " + (int)x.precioFinal
+                                 };
+            return filasEnviosHoy;
+        }
         public static IQueryable Ganancias() {
             DCDataContext dc = new DCDataContext(Conexion.DarStrConexion());
             var filasGanancia = from x in dc.eEnvio

@@ -39,11 +39,11 @@ namespace UI
             this.label1 = new System.Windows.Forms.Label();
             this.checkBoxViajesHoy = new System.Windows.Forms.CheckBox();
             this.dgvEnvios = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnReportViajes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnvios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,20 +149,6 @@ namespace UI
             this.dgvEnvios.Size = new System.Drawing.Size(749, 252);
             this.dgvEnvios.TabIndex = 57;
             // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::UI.Properties.Resources.print;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(534, 355);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(63, 44);
-            this.button3.TabIndex = 58;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -222,13 +208,28 @@ namespace UI
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
+            // btnReportViajes
+            // 
+            this.btnReportViajes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnReportViajes.BackColor = System.Drawing.Color.Transparent;
+            this.btnReportViajes.BackgroundImage = global::UI.Properties.Resources.print;
+            this.btnReportViajes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReportViajes.FlatAppearance.BorderSize = 0;
+            this.btnReportViajes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportViajes.Location = new System.Drawing.Point(545, 355);
+            this.btnReportViajes.Name = "btnReportViajes";
+            this.btnReportViajes.Size = new System.Drawing.Size(48, 44);
+            this.btnReportViajes.TabIndex = 58;
+            this.btnReportViajes.UseVisualStyleBackColor = false;
+            this.btnReportViajes.Click += new System.EventHandler(this.btnReportViajes_Click);
+            // 
             // formViajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(75)))));
-            this.ClientSize = new System.Drawing.Size(748, 426);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(748, 427);
+            this.Controls.Add(this.btnReportViajes);
             this.Controls.Add(this.dgvEnvios);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
@@ -260,6 +261,6 @@ namespace UI
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgvEnvios;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnReportViajes;
     }
 }

@@ -1,24 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MotoMensajeria" Class="DCDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-RR1BBOV\SQLEXPRESS;Initial Catalog=MotoMensajeria;User ID=AlejoDB" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="MotoMensajeriaConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Motoquero" Member="eMotoquero">
-    <Type Name="eMotoquero">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="apellido" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="numCelular" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="modeloMoto" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Association Name="Motoquero_Envio" Member="eEnvio" ThisKey="id" OtherKey="FKMotoquero" Type="eEnvio" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ClienteFijo" Member="eClienteFijo">
-    <Type Name="eClienteFijo">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="nombreCliente" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="apellidoCliente" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="numCelCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="ClienteFijo_Envio" Member="eEnvio" ThisKey="id" OtherKey="idClienteFijo" Type="eEnvio" />
-    </Type>
-  </Table>
+  <Connection Mode="AppSettings" ConnectionString="Data Source=PC94\SQLEXPRESS;Initial Catalog=MotoMensajeria;User ID=AlejoDB" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="MotoMensajeriaConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Envio" Member="eEnvio">
     <Type Name="eEnvio">
       <Column Name="idEnvio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -34,16 +15,35 @@
       <Column Name="precioFinal" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="FKMotoquero" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="idClienteFijo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="ClienteFijo_Envio" Member="eClienteFijo" ThisKey="idClienteFijo" OtherKey="id" Type="eClienteFijo" IsForeignKey="true" />
-      <Association Name="Motoquero_Envio" Member="eMotoquero" ThisKey="FKMotoquero" OtherKey="id" Type="eMotoquero" IsForeignKey="true" />
-      <Association Name="Localidad_Envio" Member="eLocalidad" ThisKey="idLocalidadEntrega" OtherKey="id" Type="eLocalidad" IsForeignKey="true" />
+      <Association Name="ClienteFijo_eEnvio" Member="eClienteFijo" ThisKey="idClienteFijo" OtherKey="id" Type="eClienteFijo" IsForeignKey="true" />
+      <Association Name="Motoquero_eEnvio" Member="eMotoquero" ThisKey="FKMotoquero" OtherKey="id" Type="eMotoquero" IsForeignKey="true" />
+      <Association Name="Localidad_eEnvio" Member="eLocalidad" ThisKey="idLocalidadEntrega" OtherKey="id" Type="eLocalidad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ClienteFijo" Member="eClienteFijo">
+    <Type Name="eClienteFijo">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombreCliente" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="apellidoCliente" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="numCelCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ClienteFijo_eEnvio" Member="eEnvio" ThisKey="id" OtherKey="idClienteFijo" Type="eEnvio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Motoquero" Member="eMotoquero">
+    <Type Name="eMotoquero">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="apellido" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="numCelular" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="modeloMoto" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Motoquero_eEnvio" Member="eEnvio" ThisKey="id" OtherKey="FKMotoquero" Type="eEnvio" />
     </Type>
   </Table>
   <Table Name="dbo.Localidad" Member="eLocalidad">
     <Type Name="eLocalidad">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Association Name="Localidad_Envio" Member="eEnvio" ThisKey="id" OtherKey="idLocalidadEntrega" Type="eEnvio" />
+      <Association Name="Localidad_eEnvio" Member="eEnvio" ThisKey="id" OtherKey="idLocalidadEntrega" Type="eEnvio" />
     </Type>
   </Table>
 </Database>

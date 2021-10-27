@@ -53,6 +53,7 @@ namespace UI
             this.button2 = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnInforme = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numCelMoto)).BeginInit();
             this.pnlAddMoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMotoqueros)).BeginInit();
@@ -347,12 +348,28 @@ namespace UI
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // btnInforme
+            // 
+            this.btnInforme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnInforme.BackColor = System.Drawing.Color.Transparent;
+            this.btnInforme.BackgroundImage = global::UI.Properties.Resources.print;
+            this.btnInforme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnInforme.FlatAppearance.BorderSize = 0;
+            this.btnInforme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInforme.Location = new System.Drawing.Point(406, 290);
+            this.btnInforme.Name = "btnInforme";
+            this.btnInforme.Size = new System.Drawing.Size(39, 33);
+            this.btnInforme.TabIndex = 59;
+            this.btnInforme.UseVisualStyleBackColor = false;
+            this.btnInforme.Click += new System.EventHandler(this.btnInforme_Click);
+            // 
             // formMotoqueros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(75)))));
-            this.ClientSize = new System.Drawing.Size(571, 458);
+            this.ClientSize = new System.Drawing.Size(571, 459);
+            this.Controls.Add(this.btnInforme);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
@@ -398,5 +415,6 @@ namespace UI
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnInforme;
     }
 }

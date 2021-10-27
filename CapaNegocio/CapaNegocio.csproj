@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente.cs" />
+    <Compile Include="ConexionCN.cs" />
     <Compile Include="Localidad.cs" />
     <Compile Include="Motoquero.cs" />
     <Compile Include="Envio.cs" />
