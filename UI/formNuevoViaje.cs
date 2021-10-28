@@ -13,7 +13,7 @@ namespace UI
     public partial class formNuevoViaje : Form
     {
         private Envio obj;
-        bool nuevoCliente = true;
+        bool nuevoCliente = false;
         public formNuevoViaje(Envio objEnvio = null)
         {
             InitializeComponent();
